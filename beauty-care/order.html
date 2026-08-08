@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout – SIMPLON Beauty</title>
+  <meta name="description"
+    content="Securely complete your luxury cosmetics order at SIMPLON Beauty checkout. Fast delivery and secure payments.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="shortcut icon" href="./favicon.svg">
+  <!-- Bootstrap 5 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+  <script>
+    if (!localStorage.getItem('simplonUser')) {
+      window.location.replace('cart.html?login_required=1');
+    }
+  </script>
+</head>
+
+<body>
+
+   <div id="loadingScreen">
+
+    <div class="loader-glow"></div>
+
+    <a href="order.html" class="logo loader-logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-spa"></i>
+        </div>
+
+        <div class="logo-text">
+            <span class="logo-brand">SIMPLON</span>
+            <span class="logo-tagline">Beauty Care Centre</span>
+        </div>
+
+    </a>
+
+</div>
+
+  <!-- Top Bar -->
+  <section class="top-bar">
+    <div class="container">
+      <div class="top-left">
+        <i class="fa-solid fa-gift"></i>
+        <span>Free delivery on orders above $150</span>
+        <span>|</span>
+        <span>Exclusive offers for our beautiful customers!</span>
+      </div>
+      <div class="top-right">
+        <i class="fa-solid fa-phone"></i>
+        <span>+60 123 456 789</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-spa"></i></div>
+      <div class="logo-text">
+        <span class="logo-brand">SIMPLON</span>
+        <span class="logo-tagline">Beauty Care Centre</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li class="dropdown">
+          <a href="products.html">PRODUCTS <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?cat=Hair Care"><i class="fa-solid fa-wand-magic-sparkles"></i> Hair Care</a></li>
+            <li><a href="products.html?cat=Skin Care"><i class="fa-solid fa-droplet"></i> Skin Care</a></li>
+            <li><a href="products.html?cat=Make-Up"><i class="fa-solid fa-palette"></i> Make-Up Kits</a></li>
+            <li><a href="products.html?cat=Nail Care"><i class="fa-solid fa-hand-sparkles"></i> Nail Care</a></li>
+            <li><a href="products.html?cat=Jewellery"><i class="fa-solid fa-gem"></i> Jewellery</a></li>
+            <li><a href="products.html?cat=Wedding Kit"><i class="fa-solid fa-ring"></i> Wedding Kits</a></li>
+            <li><a href="products.html?cat=Upcoming"><i class="fa-solid fa-rocket"></i> Upcoming</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="cart.html" class="active">CART</a></li>
+        <li><a href="feedback.html">FEEDBACK</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <a href="#" id="searchIcon" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#" id="wishlistIcon" title="Wishlist" style="position:relative;">
+        <i class="fa-regular fa-heart"></i>
+        <span id="wishlistCount">0</span>
+      </a>
+      <a href="#" id="cartIcon" class="cart-icon" title="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </a>
+      <button id="darkToggle" title="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li class="mobile-nav-sub">
+        <a href="products.html?cat=Hair Care">› Hair Care</a>
+        <a href="products.html?cat=Skin Care">› Skin Care</a>
+        <a href="products.html?cat=Make-Up">› Make-Up</a>
+        <a href="products.html?cat=Nail Care">› Nail Care</a>
+        <a href="products.html?cat=Jewellery">› Jewellery</a>
+        <a href="products.html?cat=Wedding Kit">› Wedding Kits</a>
+        <a href="products.html?cat=Upcoming">› Upcoming</a>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Secure Checkout</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="cart.html">Cart</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Checkout</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section class="checkout-page">
+    <div class="container">
+      <!-- Success State -->
+      <div id="orderSuccess" class="order-success" data-aos="fade-up">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>Order Placed Successfully!</h2>
+        <p>Thank you for shopping with SIMPLON Beauty. Your order has been received and is being processed.</p>
+        <div class="order-num" id="orderNum">SB-123456</div>
+        <p>We've sent a confirmation email with order details and tracking link to your email address.</p>
+        <a href="products.html" class="btn-primary">Continue Shopping</a>
+      </div>
+
+      <!-- Checkout Grid -->
+      <div id="checkoutGrid" class="checkout-grid" data-aos="fade-up">
+        <!-- Checkout Form -->
+        <div class="checkout-table-wrap">
+          <form id="checkoutForm" novalidate>
+            <div class="checkout-form-card">
+              <h3><i class="fa-solid fa-user-check"></i> Billing & Shipping Details</h3>
+              <hr class="form-section-divider">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" required>
+                  <span class="error-msg">First name is required.</span>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" required>
+                  <span class="error-msg">Last name is required.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="checkoutEmail">Email Address *</label>
+                  <input type="email" id="checkoutEmail" required>
+                  <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                  <label for="checkoutPhone">Phone Number *</label>
+                  <input type="tel" id="checkoutPhone" required>
+                  <span class="error-msg">Phone number is required.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Street Address *</label>
+                <input type="text" id="address" placeholder="House number and street name" required>
+                <span class="error-msg">Address is required.</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" required>
+                  <span class="error-msg">City is required.</span>
+                </div>
+                <div class="form-group">
+                  <label for="zipCode">ZIP/Postal Code *</label>
+                  <input type="text" id="zipCode" required>
+                  <span class="error-msg">ZIP/Postal code is required.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country *</label>
+                <select id="country" required>
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="Malaysia">Malaysia</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Indonesia">Indonesia</option>
+                  <option value="Brunei">Brunei</option>
+                  <option value="Thailand">Thailand</option>
+                </select>
+                <span class="error-msg">Please select a country.</span>
+              </div>
+
+              <hr class="form-section-divider">
+              <h3><i class="fa-solid fa-credit-card"></i> Payment Information</h3>
+              <hr class="form-section-divider">
+
+              <div class="payment-icons">
+                <div class="payment-icon"><i class="fa-brands fa-cc-visa"></i> Visa</div>
+                <div class="payment-icon"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</div>
+                <div class="payment-icon"><i class="fa-solid fa-building-columns"></i> FPX Online Banking</div>
+              </div>
+
+              <div class="form-group">
+                <label for="cardNumber">Card Number *</label>
+                <div class="card-input-wrap">
+                  <input type="text" id="cardNumber" placeholder="1111 2222 3333 4444" required>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+                <span class="error-msg">Please enter a valid 16-digit card number.</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cardExpiry">Expiration Date (MM/YY) *</label>
+                  <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+                  <span class="error-msg">Expiration date is required.</span>
+                </div>
+                <div class="form-group">
+                  <label for="cardCvv">CVV/Security Code *</label>
+                  <input type="text" id="cardCvv" placeholder="123" required>
+                  <span class="error-msg">3-digit CVV code is required.</span>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-order-btn">
+                <i class="fa-solid fa-lock"></i> Complete Secure Order
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Checkout Summary Card -->
+        <div class="order-summary-card">
+          <h3>Order Summary</h3>
+          <div id="checkoutSummaryItems" style="max-height: 240px; overflow-y: auto; margin-bottom: 20px;">
+            <!-- Dynamic order items -->
+          </div>
+          <hr class="form-section-divider" style="margin: 12px 0;">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="checkoutSubtotal">$0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <strong id="checkoutShipping">$0.00</strong>
+          </div>
+          <div class="summary-total" style="border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px;">
+            <span>Total</span>
+            <strong id="checkoutTotal">$0.00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fa-solid fa-spa"></i></div>
+            <div class="footer-logo-text">SIMPLON Beauty</div>
+          </div>
+          <p>Discover premium beauty essentials designed to enhance your natural beauty with elegance, confidence, and
+            care.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+          <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
+          <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+          <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <a href="products.html?cat=Hair Care"><i class="fa-solid fa-wand-magic-sparkles"></i> Hair Care</a>
+          <a href="products.html?cat=Skin Care"><i class="fa-solid fa-droplet"></i> Skin Care</a>
+          <a href="products.html?cat=Make-Up"><i class="fa-solid fa-palette"></i> Make-Up Kits</a>
+          <a href="products.html?cat=Jewellery"><i class="fa-solid fa-gem"></i> Jewellery</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <a href="#"><i class="fa-solid fa-location-dot"></i> Kuala Lumpur, Malaysia</a>
+          <a href="tel:+60123456789"><i class="fa-solid fa-phone"></i> +60 123 456 789</a>
+          <a href="mailto:info@simplonbeauty.com"><i class="fa-solid fa-envelope"></i> info@simplonbeauty.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SIMPLON Beauty Care. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared UI Components -->
+  <div id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-input-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchModalInput" placeholder="Search for products...">
+        <span id="searchClose">×</span>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>Your Cart</h3>
+      <span class="sidebar-close" id="cartClose">×</span>
+    </div>
+    <div class="cart-sidebar-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <div class="cart-footer-btns">
+        <a href="cart.html" class="cart-view-btn">View Cart</a>
+        <a href="order.html" class="cart-checkout-btn">Checkout</a>
+      </div>
+    </div>
+  </div>
+  <div class="wishlist-sidebar-overlay" id="wishlistOverlay"></div>
+  <div class="wishlist-sidebar" id="wishlistSidebar">
+    <div class="wishlist-sidebar-header">
+      <h3>Your Favourites</h3>
+      <span class="sidebar-close" id="wishlistClose">×</span>
+    </div>
+    <div class="wishlist-sidebar-items" id="wishlistItems"></div>
+  </div>
+  <div class="cart-toast" id="cartToast"><i class="fa-solid fa-check-circle"></i><span>Item added!</span></div>
+  <button id="scrollTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/products.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCheckoutSummary();
+
+
+
+      // Credit Card number formatting
+      var cardInput = document.getElementById('cardNumber');
+      if (cardInput) {
+        cardInput.addEventListener('input', (e) => {
+          let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+          let formatted = '';
+          for (let i = 0; i < value.length; i++) {
+            if (i > 0 && i % 4 === 0) {
+              formatted += ' ';
+            }
+            formatted += value[i];
+          }
+          e.target.value = formatted.slice(0, 19);
+        });
+      }
+
+      // Expiry date formatting MM/YY
+      var expiryInput = document.getElementById('cardExpiry');
+      if (expiryInput) {
+        expiryInput.addEventListener('input', (e) => {
+          let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+          if (value.length > 2) {
+            e.target.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+          } else {
+            e.target.value = value;
+          }
+        });
+      }
+
+      // CVV formatting (3 digits)
+      var cvvInput = document.getElementById('cardCvv');
+      if (cvvInput) {
+        cvvInput.addEventListener('input', (e) => {
+          e.target.value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '').slice(0, 3);
+        });
+      }
+    });
+
+    function renderCheckoutSummary() {
+      var cartData = JSON.parse(localStorage.getItem('beautyCart')) || [];
+
+      // Redirect if cart is empty and order is not finished
+      if (cartData.length === 0 && !document.getElementById('orderSuccess').style.display === 'block') {
+        window.location.href = 'cart.html';
+        return;
+      }
+
+      var container = document.getElementById('checkoutSummaryItems');
+      if (container) {
+        container.innerHTML = cartData.map(item => `
+        <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:14px; align-items:center;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img src="${item.image || 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=50&h=50&fit=crop'}" alt="${item.title}" style="width:40px; height:40px; object-fit:cover; border-radius:6px;">
+            <div>
+              <span style="font-weight:600; color:var(--heading); display:block;">${item.title}</span>
+              <span style="color:var(--paragraph); font-size:12px;">Qty: ${item.qty}</span>
+            </div>
+          </div>
+          <span style="font-weight:700; color:var(--primary);">$${(item.price * item.qty).toFixed(2)}</span>
+        </div>
+      `).join('');
+      }
+
+      let subtotal = cartData.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      // Apply shipping same rules (Free over 150)
+      let shipping = subtotal > 150 ? 0.00 : 15.00;
+      let total = subtotal + shipping;
+
+      document.getElementById('checkoutSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('checkoutShipping').textContent = shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`;
+      document.getElementById('checkoutTotal').textContent = `$${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart – SIMPLON Beauty</title>
+  <meta name="description"
+    content="View your shopping cart, apply coupon codes and check out your luxury beauty selections at SIMPLON Beauty.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="shortcut icon" href="./favicon.svg">
+  <!-- Bootstrap 5 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body>
+
+  <div id="loadingScreen">
+
+    <div class="loader-glow"></div>
+
+    <a href="cart.html" class="logo loader-logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-spa"></i>
+        </div>
+
+        <div class="logo-text">
+            <span class="logo-brand">SIMPLON</span>
+            <span class="logo-tagline">Beauty Care Centre</span>
+        </div>
+
+    </a>
+
+</div>
+
+  <!-- Top Bar -->
+  <section class="top-bar">
+    <div class="container">
+      <div class="top-left">
+        <i class="fa-solid fa-gift"></i>
+        <span>Free delivery on orders above $150</span>
+        <span>|</span>
+        <span>Exclusive offers for our beautiful customers!</span>
+      </div>
+      <div class="top-right">
+        <i class="fa-solid fa-phone"></i>
+        <span>+60 123 456 789</span>
+        <span>|</span>
+        <i class="fa-regular fa-envelope"></i>
+        <span>info@simplonbeauty.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-spa"></i></div>
+      <div class="logo-text">
+        <span class="logo-brand">SIMPLON</span>
+        <span class="logo-tagline">Beauty Care Centre</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li class="dropdown">
+          <a href="products.html">PRODUCTS <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?cat=Hair Care"><i class="fa-solid fa-wand-magic-sparkles"></i> Hair Care</a></li>
+            <li><a href="products.html?cat=Skin Care"><i class="fa-solid fa-droplet"></i> Skin Care</a></li>
+            <li><a href="products.html?cat=Make-Up"><i class="fa-solid fa-palette"></i> Make-Up Kits</a></li>
+            <li><a href="products.html?cat=Nail Care"><i class="fa-solid fa-hand-sparkles"></i> Nail Care</a></li>
+            <li><a href="products.html?cat=Jewellery"><i class="fa-solid fa-gem"></i> Jewellery</a></li>
+            <li><a href="products.html?cat=Wedding Kit"><i class="fa-solid fa-ring"></i> Wedding Kits</a></li>
+            <li><a href="products.html?cat=Upcoming"><i class="fa-solid fa-rocket"></i> Upcoming</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="cart.html" class="active">CART</a></li>
+        <li><a href="feedback.html">FEEDBACK</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <a href="#" id="searchIcon" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#" id="wishlistIcon" title="Wishlist" style="position:relative;">
+        <i class="fa-regular fa-heart"></i>
+        <span id="wishlistCount">0</span>
+      </a>
+      <a href="#" id="cartIcon" class="cart-icon" title="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </a>
+      <button id="darkToggle" title="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li class="mobile-nav-sub">
+        <a href="products.html?cat=Hair Care">› Hair Care</a>
+        <a href="products.html?cat=Skin Care">› Skin Care</a>
+        <a href="products.html?cat=Make-Up">› Make-Up</a>
+        <a href="products.html?cat=Nail Care">› Nail Care</a>
+        <a href="products.html?cat=Jewellery">› Jewellery</a>
+        <a href="products.html?cat=Wedding Kit">› Wedding Kits</a>
+        <a href="products.html?cat=Upcoming">› Upcoming</a>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Your Shopping Cart</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Cart</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section class="cart-page">
+    <div class="container">
+      <div id="cartMainContent" class="cart-page-grid" data-aos="fade-up">
+        <!-- Left side: Cart Items and Coupon -->
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cartPageItems">
+              <!-- Dynamic elements will be inserted here -->
+            </tbody>
+          </table>
+
+          <!-- Coupon input -->
+          <div class="cart-coupon">
+            <label for="couponCode">Have a coupon code?</label>
+            <input type="text" id="couponCode" placeholder="Enter coupon (e.g. SIMPLON10, BEAUTY20)">
+            <button id="applyCouponBtn" onclick="applyCoupon()">Apply Coupon</button>
+            <div id="couponMsg"></div>
+          </div>
+
+          <div class="cart-actions-row">
+            <a href="products.html" class="btn-outline"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+            <button class="btn-outline" onclick="clearFullCart()"><i class="fa-solid fa-trash-can"></i> Clear
+              Cart</button>
+          </div>
+        </div>
+
+        <!-- Right side: Order Summary -->
+        <div class="order-summary-card">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="summarySubtotal">$0.00</strong>
+          </div>
+          <div class="summary-row discount" id="summaryDiscountRow" style="display: none;">
+            <span>Discount (<span id="discountPercentage">0</span>%)</span>
+            <strong id="summaryDiscount">-$0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Estimated Shipping</span>
+            <strong id="summaryShipping">$0.00</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="summaryTotal">$0.00</strong>
+          </div>
+          <a href="order.html" class="checkout-btn"><i class="fa-solid fa-shield-check"></i> Proceed to Checkout</a>
+          <p style="font-size: 12px; color: var(--paragraph); text-align: center; margin-top: 14px;">
+            <i class="fa-solid fa-lock"></i> Secure 256-bit SSL encrypted checkout.
+          </p>
+        </div>
+      </div>
+
+      <!-- Empty Cart Template -->
+      <div id="cartEmptyContent" class="empty-cart" style="display: none;">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h2>Your Cart is Empty</h2>
+        <p>Looks like you haven't added anything to your cart yet. Explore our luxury beauty products and find your
+          glow!</p>
+        <a href="products.html" class="btn-primary">Shop Our Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fa-solid fa-spa"></i></div>
+            <div class="footer-logo-text">SIMPLON Beauty</div>
+          </div>
+          <p>Discover premium beauty essentials designed to enhance your natural beauty with elegance, confidence, and
+            care.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+          <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
+          <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+          <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <a href="products.html?cat=Hair Care"><i class="fa-solid fa-wand-magic-sparkles"></i> Hair Care</a>
+          <a href="products.html?cat=Skin Care"><i class="fa-solid fa-droplet"></i> Skin Care</a>
+          <a href="products.html?cat=Make-Up"><i class="fa-solid fa-palette"></i> Make-Up Kits</a>
+          <a href="products.html?cat=Jewellery"><i class="fa-solid fa-gem"></i> Jewellery</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <a href="#"><i class="fa-solid fa-location-dot"></i> Kuala Lumpur, Malaysia</a>
+          <a href="tel:+60123456789"><i class="fa-solid fa-phone"></i> +60 123 456 789</a>
+          <a href="mailto:info@simplonbeauty.com"><i class="fa-solid fa-envelope"></i> info@simplonbeauty.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SIMPLON Beauty Care. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared UI Components -->
+  <div id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-input-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchModalInput" placeholder="Search for products...">
+        <span id="searchClose">×</span>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>Your Cart</h3>
+      <span class="sidebar-close" id="cartClose">×</span>
+    </div>
+    <div class="cart-sidebar-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <div class="cart-footer-btns">
+        <a href="cart.html" class="cart-view-btn">View Cart</a>
+        <a href="order.html" class="cart-checkout-btn">Checkout</a>
+      </div>
+    </div>
+  </div>
+  <div class="wishlist-sidebar-overlay" id="wishlistOverlay"></div>
+  <div class="wishlist-sidebar" id="wishlistSidebar">
+    <div class="wishlist-sidebar-header">
+      <h3>Your Favourites</h3>
+      <span class="sidebar-close" id="wishlistClose">×</span>
+    </div>
+    <div class="wishlist-sidebar-items" id="wishlistItems"></div>
+  </div>
+  <div class="cart-toast" id="cartToast"><i class="fa-solid fa-check-circle"></i><span>Item added!</span></div>
+  <button id="scrollTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/products.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    let activeCoupon = null;
+    var coupons = {
+      'SIMPLON10': 0.10,
+      'BEAUTY20': 0.20
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+
+      // Hamburger mobile menu
+      document.getElementById('hamburger')?.addEventListener('click', function () {
+        this.classList.toggle('open');
+        document.getElementById('mobileNav')?.classList.toggle('open');
+        document.getElementById('mobileOverlay')?.classList.toggle('open');
+      });
+      document.getElementById('mobileOverlay')?.addEventListener('click', function () {
+        document.getElementById('hamburger')?.classList.remove('open');
+        document.getElementById('mobileNav')?.classList.remove('open');
+        this.classList.remove('open');
+      });
+    });
+
+    function renderCartPage() {
+      var cartData = JSON.parse(localStorage.getItem('beautyCart')) || [];
+      var mainContent = document.getElementById('cartMainContent');
+      var emptyContent = document.getElementById('cartEmptyContent');
+      var itemsTbody = document.getElementById('cartPageItems');
+
+      if (cartData.length === 0) {
+        if (mainContent) mainContent.style.display = 'none';
+        if (emptyContent) emptyContent.style.display = 'block';
+        return;
+      }
+
+      if (mainContent) mainContent.style.display = 'grid';
+      if (emptyContent) emptyContent.style.display = 'none';
+
+      if (itemsTbody) {
+        itemsTbody.innerHTML = cartData.map(item => {
+          var itemSubtotal = item.price * item.qty;
+          return `
+          <tr>
+            <td>
+              <div class="cart-table-img">
+                <img src="${item.image || 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=80&h=80&fit=crop'}" alt="${item.title}">
+                <div>
+                  <h4>${item.title}</h4>
+                  <span>Category: ${item.category || 'Beauty'}</span>
+                </div>
+              </div>
+            </td>
+            <td class="price-cell">$${item.price.toFixed(2)}</td>
+            <td>
+              <div class="cart-qty-control">
+                <button onclick="cartPageQtyChange(${item.id}, -1)"><i class="fa-solid fa-minus"></i></button>
+                <input type="text" value="${item.qty}" readonly>
+                <button onclick="cartPageQtyChange(${item.id}, 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </td>
+            <td class="subtotal-cell">$${itemSubtotal.toFixed(2)}</td>
+            <td class="remove-cell">
+              <button onclick="cartPageRemove(${item.id})"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+          </tr>
+        `;
+        }).join('');
+      }
+
+      updateSummary();
+    }
+
+    function cartPageQtyChange(id, delta) {
+      var cartData = JSON.parse(localStorage.getItem('beautyCart')) || [];
+      var item = cartData.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cartData.splice(cartData.indexOf(item), 1);
+      }
+      localStorage.setItem('beautyCart', JSON.stringify(cartData));
+      updateCartCount();
+      renderCartPage();
+    }
+
+    function cartPageRemove(id) {
+      var cartData = JSON.parse(localStorage.getItem('beautyCart')) || [];
+      var idx = cartData.findIndex(i => i.id === id);
+      if (idx > -1) {
+        cartData.splice(idx, 1);
+      }
+      localStorage.setItem('beautyCart', JSON.stringify(cartData));
+      updateCartCount();
+      renderCartPage();
+    }
+
+    function clearFullCart() {
+      if (confirm('Are you sure you want to clear your entire cart?')) {
+        localStorage.removeItem('beautyCart');
+        updateCartCount();
+        renderCartPage();
+      }
+    }
+
+    function applyCoupon() {
+      var code = document.getElementById('couponCode').value.trim().toUpperCase();
+      var msgEl = document.getElementById('couponMsg');
+
+      if (!code) {
+        msgEl.textContent = 'Please enter a coupon code.';
+        msgEl.style.color = '#e05c5c';
+        return;
+      }
+
+      if (coupons[code] !== undefined) {
+        activeCoupon = code;
+        msgEl.textContent = `Coupon "${code}" applied successfully! You got ${coupons[code] * 100}% off.`;
+        msgEl.style.color = '#4caf87';
+        updateSummary();
+      } else {
+        msgEl.textContent = 'Invalid coupon code. Try SIMPLON10 or BEAUTY20.';
+        msgEl.style.color = '#e05c5c';
+      }
+    }
+
+    function updateSummary() {
+      var cartData = JSON.parse(localStorage.getItem('beautyCart')) || [];
+      let subtotal = cartData.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let discount = 0;
+
+      if (activeCoupon && coupons[activeCoupon]) {
+        discount = subtotal * coupons[activeCoupon];
+        document.getElementById('summaryDiscountRow').style.display = 'flex';
+        document.getElementById('discountPercentage').textContent = coupons[activeCoupon] * 100;
+        document.getElementById('summaryDiscount').textContent = `-$${discount.toFixed(2)}`;
+      } else {
+        document.getElementById('summaryDiscountRow').style.display = 'none';
+      }
+
+      // Shipping calculations: Free above $150, else $15
+      let shipping = subtotal > 0 && subtotal - discount < 150 ? 15.00 : 0.00;
+      let total = subtotal - discount + shipping;
+
+      document.getElementById('summarySubtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('summaryShipping').textContent = shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`;
+      document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio — Frontend Developer specializing in HTML, CSS & JavaScript. Explore my projects and skills." />
+  <title>Faiza Feroze | Frontend Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- Particle Canvas Background -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ============================
+     NAVBAR
+============================ -->
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" id="logo">FF<span>.</span></a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#home"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user" aria-hidden="true"></i> About</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-code" aria-hidden="true"></i> Skills</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-folder-open" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="#education"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Education</a></li>
+        <li><a href="#contact" class="nav-cta"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Hire Me</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================
+     HERO SECTION
+============================ -->
+<section class="hero" id="home" aria-label="Hero section">
+  <div class="glow-blob glow-blob-1" aria-hidden="true"></div>
+  <div class="glow-blob glow-blob-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Open to work &amp; freelance
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="grad-text">Faiza Feroze</span>
+        </h1>
+
+        <p class="hero-role">
+          I'm a <span class="typed" id="typed" aria-live="polite"></span>
+        </p>
+
+        <p class="hero-desc">
+          I'm a student doing a <strong>Software Engineering Diploma at Aptech</strong>.
+          I love building clean, beautiful websites with HTML, CSS &amp; JavaScript.
+          Every project teaches me something new!
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn-p" id="view-projects-btn">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i> View My Work
+          </a>
+          <a href="#contact" class="btn-o" id="contact-btn">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i> Let's Talk
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-num counter" data-to="5" data-suf="+">0+</div>
+            <div class="stat-lbl">Projects Done</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num counter" data-to="1" data-suf="+">0+</div>
+            <div class="stat-lbl">Year Learning</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num counter" data-to="100" data-suf="%">0%</div>
+            <div class="stat-lbl">Dedication</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Avatar -->
+      <div class="hero-visual">
+        <div class="avatar-wrap">
+          <div class="ring-1" aria-hidden="true"></div>
+          <div class="ring-2" aria-hidden="true"></div>
+
+          <!-- Aapki apni photo yahan lagao: -->
+          <img src="assets/img/profile.png" alt="Profile photo" class="avatar-img" />
+
+          <!-- Floating Badges -->
+          <div class="fl-badge fl-badge-1" aria-hidden="true">
+            <i class="fa-solid fa-bolt" style="color:var(--accent)"></i>
+            Fast Learner
+          </div>
+          <div class="fl-badge fl-badge-2" aria-hidden="true">
+            <i class="fa-solid fa-palette" style="color:var(--accent)"></i>
+            Design Focused
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================
+     ABOUT SECTION
+============================ -->
+<section class="about" id="about" aria-label="About me">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Image Side -->
+      <div class="about-img-wrap reveal">
+        <div class="about-img-box">
+          <img src="assets/img/about.png" alt="About me" />
+          <div class="deco-sq" aria-hidden="true"></div>
+
+          <div class="exp-badge">
+            <div class="exp-num"><i class="fa-solid fa-fire" style="font-size:1.5rem;color:var(--accent)"></i></div>
+            <div class="exp-lbl">Student<br>Developer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Side -->
+      <div class="about-text reveal">
+        <div class="sec-tag">About Me</div>
+        <h2 class="sec-title">
+          Passionate About <span class="grad-text">Web Development</span>
+        </h2>
+
+        <p>
+          Hello! I'm <strong>Faiza Feroze</strong>, a student from Pakistan currently doing a
+          <strong>Software Engineering Diploma at Aptech Computer Education</strong> (Feb 2026).
+          I completed my Intermediate in 2025 and immediately pursued my passion for tech.
+        </p>
+        <p>
+          I'm learning <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>
+          as part of my diploma course. I enjoy creating responsive, clean web pages and
+          this portfolio is one of my first real projects!
+        </p>
+        <p>
+          My goal is to become a professional frontend developer. I'm dedicated, hardworking,
+          and excited to grow in the tech field every single day.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-row">
+            <span class="i-lbl"><i class="fa-solid fa-signature fa-xs" aria-hidden="true"></i> Name</span>
+            <span class="i-val">Faiza Feroze</span>
+          </div>
+          <div class="info-row">
+            <span class="i-lbl"><i class="fa-solid fa-envelope fa-xs" aria-hidden="true"></i> Email</span>
+            <span class="i-val">faiza.feroze@gmail.com</span>
+          </div>
+          <div class="info-row">
+            <span class="i-lbl"><i class="fa-solid fa-location-dot fa-xs" aria-hidden="true"></i> Location</span>
+            <span class="i-val">Pakistan 🇵🇰</span>
+          </div>
+          <div class="info-row">
+            <span class="i-lbl"><i class="fa-solid fa-circle-dot fa-xs" aria-hidden="true"></i> Status</span>
+            <span class="i-val" style="color:var(--accent)">● Available</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-p" id="about-cta" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+          <i class="fa-solid fa-handshake" aria-hidden="true"></i> Get In Touch
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SKILLS SECTION
+============================ -->
+<section class="skills" id="skills" aria-label="My skills">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-tag">What I Know</div>
+      <h2 class="sec-title">My <span class="grad-text">Skills</span></h2>
+      <p class="sec-desc">Technologies I have learned and am actively practicing.</p>
+    </div>
+
+    <!-- Skill Cards -->
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="sk-head">
+          <div class="sk-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></div>
+          <div class="sk-name">HTML &amp; CSS</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-tag">HTML5</span>
+          <span class="sk-tag">CSS3</span>
+          <span class="sk-tag">Flexbox</span>
+          <span class="sk-tag">Grid</span>
+          <span class="sk-tag">Responsive</span>
+          <span class="sk-tag">Animations</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="sk-head">
+          <div class="sk-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></div>
+          <div class="sk-name">JavaScript</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-tag">DOM</span>
+          <span class="sk-tag">Events</span>
+          <span class="sk-tag">ES6+</span>
+          <span class="sk-tag">Fetch API</span>
+          <span class="sk-tag">Local Storage</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="sk-head">
+          <div class="sk-icon"><i class="fa-solid fa-tools" aria-hidden="true"></i></div>
+          <div class="sk-name">Tools</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-tag">VS Code</span>
+          <span class="sk-tag">Git</span>
+          <span class="sk-tag">GitHub</span>
+          <span class="sk-tag">Figma (Basic)</span>
+          <span class="sk-tag">Chrome DevTools</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skill Bars -->
+    <div class="skill-bars" style="margin-top:4rem;max-width:700px">
+
+      <div class="sb-item reveal">
+        <div class="sb-head">
+          <span class="sb-name"><i class="fa-brands fa-html5 fa-sm" aria-hidden="true"></i> HTML5</span>
+          <span class="sb-pct">85%</span>
+        </div>
+        <div class="sb-track"><div class="sb-fill" data-pct="85"></div></div>
+      </div>
+
+      <div class="sb-item reveal">
+        <div class="sb-head">
+          <span class="sb-name"><i class="fa-brands fa-css3-alt fa-sm" aria-hidden="true"></i> CSS3</span>
+          <span class="sb-pct">80%</span>
+        </div>
+        <div class="sb-track"><div class="sb-fill" data-pct="80"></div></div>
+      </div>
+
+      <div class="sb-item reveal">
+        <div class="sb-head">
+          <span class="sb-name"><i class="fa-brands fa-js fa-sm" aria-hidden="true"></i> JavaScript</span>
+          <span class="sb-pct">55%</span>
+        </div>
+        <div class="sb-track"><div class="sb-fill" data-pct="55"></div></div>
+      </div>
+
+      <div class="sb-item reveal">
+        <div class="sb-head">
+          <span class="sb-name"><i class="fa-brands fa-github fa-sm" aria-hidden="true"></i> Git / GitHub</span>
+          <span class="sb-pct">60%</span>
+        </div>
+        <div class="sb-track"><div class="sb-fill" data-pct="60"></div></div>
+      </div>
+
+      <div class="sb-item reveal">
+        <div class="sb-head">
+          <span class="sb-name"><i class="fa-solid fa-mobile-screen fa-sm" aria-hidden="true"></i> Responsive Design</span>
+          <span class="sb-pct">75%</span>
+        </div>
+        <div class="sb-track"><div class="sb-fill" data-pct="75"></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PROJECTS SECTION
+============================ -->
+<section class="projects" id="projects" aria-label="My projects">
+  <div class="container">
+
+    <div class="proj-header reveal">
+      <div>
+        <div class="sec-tag">My Work</div>
+        <h2 class="sec-title">Featured <span class="grad-text">Projects</span></h2>
+      </div>
+      <div class="filter-wrap" role="group" aria-label="Project filters">
+        <button class="f-btn active" data-cat="all" id="filter-all">All</button>
+        <button class="f-btn" data-cat="web" id="filter-web">Websites</button>
+        <button class="f-btn" data-cat="js" id="filter-js">JS Apps</button>
+      </div>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Project 1 -->
+      <article class="p-card reveal" data-cat="web" aria-label="Beauty Care website project">
+        <div class="p-img">
+          <img src="beauty-care/assets/img/product-hero.png" alt="Simplon Beauty Care" style="width: 100%; height: 100%; object-fit: cover;" />
+          <div class="p-overlay">
+            <a href="beauty-care/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
+          <h3 class="p-title">Simplon Beauty Care</h3>
+          <p class="p-desc">A premium beauty care portal featuring skincare, haircare, makeup, and bridal kits. Beautiful layout with smooth transitions.</p>
+          <div class="p-techs">
+            <span class="t-tag">HTML5</span>
+            <span class="t-tag">CSS3</span>
+            <span class="t-tag">Bootstrap 5</span>
+            <span class="t-tag">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="p-card reveal" data-cat="js" aria-label="To-do list app project">
+        <div class="p-img" style="background:linear-gradient(135deg,rgba(6,182,212,0.35),rgba(124,58,237,0.4))">
+          <i class="fa-solid fa-list-check" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+          <div class="p-overlay">
+            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
+          <h3 class="p-title">To-Do List App</h3>
+          <p class="p-desc">A simple task manager app with add, delete, and complete features. Data saved in Local Storage.</p>
+          <div class="p-techs">
+            <span class="t-tag">HTML</span>
+            <span class="t-tag">CSS</span>
+            <span class="t-tag">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="p-card reveal" data-cat="web" aria-label="Portfolio website project">
+        <div class="p-img" style="background:linear-gradient(135deg,rgba(6,182,212,0.35),rgba(99,102,241,0.35))">
+          <i class="fa-solid fa-id-card" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+          <div class="p-overlay">
+            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
+          <h3 class="p-title">Portfolio Website</h3>
+          <p class="p-desc">This portfolio — built from scratch with pure HTML, CSS & JavaScript. Animated, responsive, dark themed.</p>
+          <div class="p-techs">
+            <span class="t-tag">HTML</span>
+            <span class="t-tag">CSS</span>
+            <span class="t-tag">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="p-card reveal" data-cat="js" aria-label="Calculator app project">
+        <div class="p-img" style="background:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(6,182,212,0.35))">
+          <i class="fa-solid fa-calculator" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+          <div class="p-overlay">
+            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
+          <h3 class="p-title">Calculator App</h3>
+          <p class="p-desc">A clean, fully functional calculator with keyboard support, history, and smooth button animations.</p>
+          <div class="p-techs">
+            <span class="t-tag">HTML</span>
+            <span class="t-tag">CSS</span>
+            <span class="t-tag">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="p-card reveal" data-cat="web" aria-label="E-commerce product page project">
+        <div class="p-img" style="background:linear-gradient(135deg,rgba(245,158,11,0.3),rgba(239,68,68,0.3))">
+          <i class="fa-solid fa-bag-shopping" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+          <div class="p-overlay">
+            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
+          <h3 class="p-title">Product Landing Page</h3>
+          <p class="p-desc">A stylish product showcase page with image gallery, features section, and a responsive layout built with CSS Grid.</p>
+          <div class="p-techs">
+            <span class="t-tag">HTML</span>
+            <span class="t-tag">CSS</span>
+            <span class="t-tag">CSS Grid</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     EDUCATION SECTION
+============================ -->
+<section class="education" id="education" aria-label="Education">
+  <div class="container">
+
+    <div class="edu-header reveal">
+      <div class="sec-tag">Background</div>
+      <h2 class="sec-title">My <span class="grad-text">Education</span></h2>
+      <p class="sec-desc" style="margin:0 auto">My learning journey in web development.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Item 1 -->
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-degree">
+            <i class="fa-solid fa-graduation-cap" style="color:var(--accent);margin-right:8px" aria-hidden="true"></i>
+            Intermediate
+          </div>
+          <div class="tl-school">Pakistan</div>
+          <p class="tl-desc">Completed my Intermediate education in 2025. During this time I developed a keen interest in computers and technology, which inspired me to pursue software development.</p>
+        </div>
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-date">
+          <span class="d-badge"><i class="fa-regular fa-calendar" aria-hidden="true"></i> 2025</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-degree">
+            <i class="fa-solid fa-laptop-code" style="color:var(--accent);margin-right:8px" aria-hidden="true"></i>
+            Diploma in Software Engineering
+          </div>
+          <div class="tl-school">Aptech Computer Education</div>
+          <p class="tl-desc">Currently enrolled in a Software Engineering diploma at Aptech. Learning programming fundamentals, web development (HTML, CSS, JavaScript), and software development concepts. Actively building real projects as part of my coursework.</p>
+        </div>
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-date">
+          <span class="d-badge"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Feb 2026 – Present</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CONTACT SECTION
+============================ -->
+<section class="contact" id="contact" aria-label="Contact me">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:3.5rem">
+      <div class="sec-tag">Say Hello</div>
+      <h2 class="sec-title">Get In <span class="grad-text">Touch</span></h2>
+      <p class="sec-desc">Want to work together or just want to say hi? Feel free to send me a message!</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="c-info reveal">
+        <h3>Let's Connect</h3>
+        <p>I'm always happy to discuss new projects, ideas, or collaborations. Drop me a message!</p>
+
+        <div class="c-items">
+          <div class="c-item" id="contact-email">
+            <div class="c-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div>
+              <div class="c-lbl">Email</div>
+              <div class="c-val">faiza.feroze@gmail.com</div>
+            </div>
+          </div>
+          <div class="c-item" id="contact-phone">
+            <div class="c-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <div>
+              <div class="c-lbl">WhatsApp</div>
+              <div class="c-val">+92 300 0000000</div>
+            </div>
+          </div>
+          <div class="c-item" id="contact-location">
+            <div class="c-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div>
+              <div class="c-lbl">Location</div>
+              <div class="c-val">Pakistan 🇵🇰</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="socials" role="list" aria-label="Social media links">
+          <a href="#" class="soc-btn" aria-label="GitHub" id="social-github" title="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="soc-btn" aria-label="LinkedIn" id="social-linkedin" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Instagram" id="social-instagram" title="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Facebook" id="social-facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal">
+        <form class="c-form" id="contactForm" novalidate aria-label="Contact form">
+          <div class="f-group">
+            <label class="f-label" for="name">
+              <i class="fa-solid fa-user fa-xs" aria-hidden="true"></i> Full Name
+            </label>
+            <input class="f-input" type="text" id="name" name="name" placeholder="Muhammad Ali" required autocomplete="name" />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="email">
+              <i class="fa-solid fa-envelope fa-xs" aria-hidden="true"></i> Email Address
+            </label>
+            <input class="f-input" type="email" id="email" name="email" placeholder="ali@example.com" required autocomplete="email" />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="subject">
+              <i class="fa-solid fa-tag fa-xs" aria-hidden="true"></i> Subject
+            </label>
+            <input class="f-input" type="text" id="subject" name="subject" placeholder="Website Project" required />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="message">
+              <i class="fa-solid fa-message fa-xs" aria-hidden="true"></i> Message
+            </label>
+            <textarea class="f-area" id="message" name="message" placeholder="Hi! I'd like to discuss..." required></textarea>
+          </div>
+          <button type="submit" class="f-submit" id="submit-btn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="foot-inner">
+      <p class="foot-copy">
+        &copy; 2026 <span>Faiza Feroze</span>. Made with <i class="fa-solid fa-heart" style="color:#ef4444" aria-hidden="true"></i> &amp; lots of <i class="fa-solid fa-mug-hot" style="color:var(--accent)" aria-hidden="true"></i>
+      </p>
+      <div class="foot-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

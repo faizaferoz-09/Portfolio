@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66714C"/>
+      <stop offset="100%" stop-color="#8a9870"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Olive-green circle matching .logo-icon exactly -->
+  <circle cx="32" cy="32" r="32" fill="url(#g)"/>
+
+  <!-- 3 petals, all meeting at centre base point (32, 45) -->
+  <g fill="#ffffff">
+
+    <!-- CENTER petal — pointing straight up -->
+    <path d="
+      M 32 45
+      C 22 40 22 18 32 12
+      C 42 18 42 40 32 45
+      Z
+    "/>
+
+    <!-- LEFT petal — pointing lower-left (~120° from centre) -->
+    <path d="
+      M 32 45
+      C 28 55 9 53 8 39
+      C 7 26 22 33 32 45
+      Z
+    "/>
+
+    <!-- RIGHT petal — pointing lower-right (~120° from centre) -->
+    <path d="
+      M 32 45
+      C 36 55 55 53 56 39
+      C 57 26 42 33 32 45
+      Z
+    "/>
+
+  </g>
+</svg>
