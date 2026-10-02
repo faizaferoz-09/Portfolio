@@ -316,15 +316,19 @@
 <!-- ============================
      PROJECTS SECTION
 ============================ -->
-<section class="projects" id="projects" aria-label="My projects">
+<!-- ============================
+     PROJECTS SECTION
+============================ -->
+<section class="projects" id="projects" aria-label="Featured projects">
   <div class="container">
 
     <div class="proj-header reveal">
-      <div>
-        <div class="sec-tag">My Work</div>
-        <h2 class="sec-title">Featured <span class="grad-text">Projects</span></h2>
-      </div>
-      <div class="filter-wrap" role="group" aria-label="Project filters">
+      <div class="sec-tag">My Work</div>
+      <h2 class="sec-title">Featured <span class="grad-text">Projects</span></h2>
+      <p class="sec-desc">A selection of my web applications, landing pages, and interactive tools built with modern web technologies.</p>
+
+      <!-- Filter Buttons -->
+      <div class="p-filters" role="group" aria-label="Filter projects by technology">
         <button class="f-btn active" data-cat="all" id="filter-all">All</button>
         <button class="f-btn" data-cat="web" id="filter-web">Websites</button>
         <button class="f-btn" data-cat="js" id="filter-js">JS Apps</button>
@@ -332,17 +336,18 @@
       </div>
     </div>
 
-    <div class="proj-grid">
+    <!-- Projects Grid -->
+    <div class="proj-grid" id="proj-grid">
 
-      <!-- Project 1 -->
+      <!-- Project 1: Simplon Beauty Care -->
       <article class="p-card reveal" data-cat="web" aria-label="Beauty Care website project">
-        <div class="p-img">
-          <img src="beauty-care/assets/img/product-hero.png" alt="Simplon Beauty Care" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/product-landing.jpg" alt="Simplon Beauty Care" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="beauty-care/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/beauty-care" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -350,75 +355,24 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
           <h3 class="p-title">Simplon Beauty Care</h3>
-          <p class="p-desc">A premium beauty care portal featuring skincare, haircare, makeup, and bridal kits. Beautiful layout with smooth transitions.</p>
+          <p class="p-desc">A modern beauty and skincare product website with elegant layout, product cards, treatment menu, and contact form.</p>
           <div class="p-techs">
             <span class="t-tag">HTML5</span>
             <span class="t-tag">CSS3</span>
-            <span class="t-tag">Bootstrap 5</span>
             <span class="t-tag">JavaScript</span>
           </div>
         </div>
       </article>
 
-      <!-- Project 2 -->
-      <article class="p-card reveal" data-cat="js" aria-label="To-do list app project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(6,182,212,0.35),rgba(124,58,237,0.4))">
-          <i class="fa-solid fa-list-check" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
-          <div class="p-overlay">
-            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
-          <h3 class="p-title">To-Do List App</h3>
-          <p class="p-desc">A simple task manager app with add, delete, and complete features. Data saved in Local Storage.</p>
-          <div class="p-techs">
-            <span class="t-tag">HTML</span>
-            <span class="t-tag">CSS</span>
-            <span class="t-tag">JavaScript</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="p-card reveal" data-cat="web" aria-label="Portfolio website project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(6,182,212,0.35),rgba(99,102,241,0.35))">
-          <i class="fa-solid fa-id-card" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
-          <div class="p-overlay">
-            <a href="#" class="p-lnk" title="Live Demo" aria-label="Live Demo">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
-          <h3 class="p-title">Portfolio Website</h3>
-          <p class="p-desc">This portfolio — built from scratch with pure HTML, CSS & JavaScript. Animated, responsive, dark themed.</p>
-          <div class="p-techs">
-            <span class="t-tag">HTML</span>
-            <span class="t-tag">CSS</span>
-            <span class="t-tag">JavaScript</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
+      <!-- Project 2: Calculator App -->
       <article class="p-card reveal" data-cat="js" aria-label="Calculator app project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(6,182,212,0.35))">
-          <i class="fa-solid fa-calculator" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/calculator.jpg" alt="Calculator App" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="calculator/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/calculator" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -426,7 +380,7 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
           <h3 class="p-title">Calculator App</h3>
-          <p class="p-desc">A clean, fully functional calculator with keyboard support, history, and smooth button animations.</p>
+          <p class="p-desc">A sleek interactive calculator app with dark mode glassmorphism UI, keyboard support, calculation history, and smooth animations.</p>
           <div class="p-techs">
             <span class="t-tag">HTML</span>
             <span class="t-tag">CSS</span>
@@ -435,15 +389,15 @@
         </div>
       </article>
 
-      <!-- Project 5 -->
+      <!-- Project 3: Product Landing Page -->
       <article class="p-card reveal" data-cat="web" aria-label="E-commerce product page project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(245,158,11,0.3),rgba(239,68,68,0.3))">
-          <i class="fa-solid fa-bag-shopping" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/product-landing.jpg" alt="Product Landing Page" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="product-landing-page/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/product-landing-page" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -451,18 +405,19 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-solid fa-globe fa-xs" aria-hidden="true"></i> Website</div>
           <h3 class="p-title">Product Landing Page</h3>
-          <p class="p-desc">A stylish product showcase page with image gallery, features section, and a responsive layout built with CSS Grid.</p>
+          <p class="p-desc">A luxury product showcase landing page with image gallery, interactive specs grid, buy now modal, and responsive design.</p>
           <div class="p-techs">
             <span class="t-tag">HTML</span>
-            <span class="t-tag">CSS</span>
             <span class="t-tag">CSS Grid</span>
+            <span class="t-tag">JavaScript</span>
           </div>
         </div>
       </article>
-      <!-- Project 6 -->
+
+      <!-- Project 4: Fandom Verse -->
       <article class="p-card reveal" data-cat="react" aria-label="Fandom Verse project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(168,85,247,0.4),rgba(236,72,153,0.35))">
-          <i class="fa-solid fa-star" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/fandomverse.jpg" alt="Fandom Verse" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="https://faizaferoz-09.github.io/FandomVerse/" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -475,7 +430,7 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-brands fa-react fa-xs" aria-hidden="true"></i> React App</div>
           <h3 class="p-title">Fandom Verse</h3>
-          <p class="p-desc">A full-featured fandom hub for BTS fans with media gallery, character profiles, merch shop, bookmarks, and articles section. Built with React + Vite.</p>
+          <p class="p-desc">A full-featured fandom hub for anime, gaming & music fans with media gallery, character profiles, merch shop, bookmarks, and articles section. Built with React + Vite.</p>
           <div class="p-techs">
             <span class="t-tag">React</span>
             <span class="t-tag">Vite</span>
@@ -485,15 +440,15 @@
         </div>
       </article>
 
-      <!-- Project 7 -->
+      <!-- Project 5: Velora POS -->
       <article class="p-card reveal" data-cat="js" aria-label="Velora POS project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(16,185,129,0.35),rgba(6,182,212,0.3))">
-          <i class="fa-solid fa-receipt" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/velora-pos.jpg" alt="Velora POS" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="velora-pos/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/velora-pos" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -501,7 +456,7 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
           <h3 class="p-title">Velora POS</h3>
-          <p class="p-desc">A Sales Point and Receipt Generator system. Manage products, generate printable receipts, and track sales all in the browser with pure JavaScript.</p>
+          <p class="p-desc">A Point of Sale and Receipt Generator system. Manage product inventories, generate printable PDF receipts, and track browser sales with pure JS.</p>
           <div class="p-techs">
             <span class="t-tag">HTML</span>
             <span class="t-tag">CSS</span>
@@ -510,15 +465,15 @@
         </div>
       </article>
 
-      <!-- Project 8 -->
+      <!-- Project 6: Innings Progression -->
       <article class="p-card reveal" data-cat="js" aria-label="Cricket Match Analysis project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(245,158,11,0.35),rgba(16,185,129,0.3))">
-          <i class="fa-solid fa-chart-line" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/match-analysis.jpg" alt="Innings Progression" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="match-analysis/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/match-analysis" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -526,7 +481,7 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-brands fa-js fa-xs" aria-hidden="true"></i> JavaScript App</div>
           <h3 class="p-title">Innings Progression</h3>
-          <p class="p-desc">A cricket match analysis dashboard showing innings progression with Chart.js and jQuery. Interactive graphs for real-time score tracking and visualization.</p>
+          <p class="p-desc">A sports analytics dashboard showing cricket match innings progression with Chart.js line graphs, run rate dynamics, and real-time score tracking.</p>
           <div class="p-techs">
             <span class="t-tag">HTML</span>
             <span class="t-tag">CSS</span>
@@ -536,15 +491,15 @@
         </div>
       </article>
 
-      <!-- Project 9 -->
+      <!-- Project 7: AI Chatbot -->
       <article class="p-card reveal" data-cat="js" aria-label="AI Chatbot project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(99,102,241,0.4),rgba(6,182,212,0.35))">
-          <i class="fa-solid fa-robot" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
+        <div class="p-img" style="position:relative;overflow:hidden;">
+          <img src="assets/img/projects/ai-chatbot.jpg" alt="AI Chatbot" style="width:100%;height:100%;object-fit:cover;" />
           <div class="p-overlay">
             <a href="ai-chatbot/public/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
+            <a href="https://github.com/faizaferoz-09/Portfolio/tree/main/ai-chatbot" target="_blank" class="p-lnk" title="GitHub Code" aria-label="View Code">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -552,35 +507,9 @@
         <div class="p-body">
           <div class="p-type"><i class="fa-brands fa-node-js fa-xs" aria-hidden="true"></i> Node.js App</div>
           <h3 class="p-title">AI Chatbot</h3>
-          <p class="p-desc">A conversational AI chatbot with Node.js backend. Handles real-time messaging with a clean chat interface and server-side response handling.</p>
+          <p class="p-desc">A smart conversational AI assistant with responsive chat window UI, message bubbles, bot avatars, and instant reply simulations.</p>
           <div class="p-techs">
             <span class="t-tag">Node.js</span>
-            <span class="t-tag">JavaScript</span>
-            <span class="t-tag">CSS</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 10 -->
-      <article class="p-card reveal" data-cat="react" aria-label="MSG VisionSquad project">
-        <div class="p-img" style="background:linear-gradient(135deg,rgba(239,68,68,0.3),rgba(245,158,11,0.35))">
-          <i class="fa-solid fa-eye" style="font-size:3rem;color:rgba(255,255,255,0.8)"></i>
-          <div class="p-overlay">
-            <a href="msg-visionsquad/index.html" target="_blank" class="p-lnk" title="Live Demo" aria-label="Live Demo">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="#" class="p-lnk" title="GitHub Code" aria-label="View Code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-type"><i class="fa-brands fa-vuejs fa-xs" aria-hidden="true"></i> Vue.js App</div>
-          <h3 class="p-title">MSG VisionSquad</h3>
-          <p class="p-desc">A modern web app built with Vue.js featuring dynamic UI, client-side routing, services layer, and full component-based architecture.</p>
-          <div class="p-techs">
-            <span class="t-tag">Vue.js</span>
-            <span class="t-tag">Vite</span>
             <span class="t-tag">JavaScript</span>
             <span class="t-tag">CSS</span>
           </div>
