@@ -1,0 +1,365 @@
+/**
+ * Event Highlights Dataset
+ * Meets SRS requirement: At least 3+ events for every single category (7 categories = 21+ events)
+ */
+
+export const EVENTS_DATA = [
+  /* ================= ANIME (3+ events) ================= */
+  {
+    id: 'evt-anime-01',
+    title: 'Anime Expo 2026: Infinite Horizons',
+    category: 'anime',
+    date: '2026-10-15',
+    time: '09:00 AM PST',
+    location: 'Los Angeles Convention Center, CA',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'Flagship Event',
+    attendees: '120,000+ Fans',
+    ticketPrice: '$145 - 4-Day Pass',
+    image: '/assets/img/anime/demon-slayer.jpg',
+    description: 'The largest celebration of Japanese pop culture in North America featuring exclusive world premieres, voice actor panels, masquerade cosplay championships, and industry reveals from Ufotable, MAPPA, and Toei.',
+    highlights: ['Demon Slayer Movie World Premiere', 'Jujutsu Kaisen Cast Meet & Greet', 'Exhibit Hall & Artist Alley with 1,000+ creators']
+  },
+  {
+    id: 'evt-anime-02',
+    title: 'Jump Festa 2026 Tokyo Dome Live',
+    category: 'anime',
+    date: '2026-12-19',
+    time: '10:00 AM JST',
+    location: 'Makuhari Messe, Chiba, Tokyo',
+    type: 'Exhibition',
+    status: 'upcoming',
+    badge: 'Official Shueisha',
+    attendees: '90,000+ In-Person',
+    ticketPrice: 'Free Lottery Admission',
+    image: '/assets/img/anime/gojo.jpg',
+    description: 'Shueisha’s monumental annual festival showcasing the future of Weekly Shonen Jump, with stage events for One Piece, Chainsaw Man, Bleach, and exciting new serializations.',
+    highlights: ['Original Manga Manuscript Displays', 'Exclusive Voice Actor Drama Stages', 'Limited Edition Merch Drops']
+  },
+  {
+    id: 'evt-anime-03',
+    title: 'Solo Leveling: Shadow Monarch World Tour Premiere',
+    category: 'anime',
+    date: '2026-08-20',
+    time: '07:00 PM KST',
+    location: 'Lotte World Tower Cinema, Seoul',
+    type: 'Premiere',
+    status: 'past',
+    badge: 'Sold Out',
+    attendees: '5,000 VIP Attendees',
+    ticketPrice: '$45 VIP',
+    image: 'https://img.youtube.com/vi/q15CRdE5Bv0/hqdefault.jpg',
+    description: 'Red-carpet cinematic world premiere screening of Season 2 episodes 1-3 with live symphonic performance by Hiroyuki Sawano and vocalists.',
+    highlights: ['Live Orchestra Score', 'Cast Q&A and Autograph Session', 'Shadow Soldier Life-Size Statues']
+  },
+
+  /* ================= GAMING (3+ events) ================= */
+  {
+    id: 'evt-game-01',
+    title: 'Gamescom 2026: Next-Gen Gaming Expo',
+    category: 'gaming',
+    date: '2026-10-28',
+    time: '10:00 AM CEST',
+    location: 'Koelnmesse, Cologne, Germany',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'Global Premiere',
+    attendees: '350,000+ Attendees',
+    ticketPrice: '€65 Day Pass',
+    image: '/assets/img/gaming/genshin.jpg',
+    description: 'The world’s largest gaming event bringing together top game studios, hardware innovators, hands-on demos for unreleased AAA titles, and Opening Night Live.',
+    highlights: ['Geoff Keighley Opening Night Live', 'Hands-on next-gen RPG demos', 'Esports Arena Showmatches']
+  },
+  {
+    id: 'evt-game-02',
+    title: 'Genshin Impact HoyoFair Global Fan Art Celebration',
+    category: 'gaming',
+    date: '2026-09-28',
+    time: '08:00 PM UTC',
+    location: 'Live Streamed Worldwide (Online / Metaverse)',
+    type: 'Watch Party',
+    status: 'upcoming',
+    badge: 'Live Stream Event',
+    attendees: '2.5M+ Concurrent Viewers',
+    ticketPrice: 'Free Online Event',
+    image: 'https://img.youtube.com/vi/TAlKhARUcoY/hqdefault.jpg',
+    description: 'A grand virtual broadcast spotlighting phenomenal fan-made animations, short films, orchestral remixes, and live voice actor musical performances.',
+    highlights: ['Over 30 fan-animated shorts', 'Original Teyvat symphonic suite', 'In-game Primogem reward codes']
+  },
+  {
+    id: 'evt-game-03',
+    title: 'League of Legends Worlds Finals 2026',
+    category: 'gaming',
+    date: '2026-11-07',
+    time: '05:00 PM CST',
+    location: 'Beijing National Stadium, China',
+    type: 'Tournament',
+    status: 'upcoming',
+    badge: 'Esports Grand Final',
+    attendees: '80,000 Stadium Seats',
+    ticketPrice: '$180 - $450',
+    image: 'https://img.youtube.com/vi/UOxkGD8qRB4/hqdefault.jpg',
+    description: 'The apex of global competitive esports where the world’s top two teams clash for the Summoner’s Cup alongside an opening ceremony featuring augmented reality holograms and Arcane artists.',
+    highlights: ['Holographic Opening Ceremony', 'Championship Summoner’s Cup battle', 'Exclusive Worlds Merch Village']
+  },
+
+  /* ================= MOVIES (3+ events) ================= */
+  {
+    id: 'evt-movie-01',
+    title: 'San Diego Comic-Con: Hall H Cinematic Reveal Panel',
+    category: 'movies',
+    date: '2026-10-05',
+    time: '11:00 AM PST',
+    location: 'San Diego Convention Center, CA',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'High Demand',
+    attendees: '6,500 Hall H Capacity',
+    ticketPrice: 'Included in SDCC Badge',
+    image: 'https://img.youtube.com/vi/cqGjhVJWtEg/hqdefault.jpg',
+    description: 'The legendary Hall H presentation where Marvel Studios, DC Studios, and major directors drop exclusive trailers, cast announcements, and behind-the-scenes footage.',
+    highlights: ['Avengers: Secret Wars Sneak Peek', 'Spider-Verse 3 Director Panel', 'Star-Studded Cast Q&A']
+  },
+  {
+    id: 'evt-movie-02',
+    title: 'Dune IMAX 70mm All-Night Marathon & Hans Zimmer Live',
+    category: 'movies',
+    date: '2026-11-14',
+    time: '06:00 PM EST',
+    location: 'Lincoln Square IMAX, New York',
+    type: 'Watch Party',
+    status: 'upcoming',
+    badge: 'IMAX 70mm Special',
+    attendees: '600 Audiophiles',
+    ticketPrice: '$75 Full Pass',
+    image: 'https://img.youtube.com/vi/Way9Dexny3w/hqdefault.jpg',
+    description: 'A special screening of Dune Parts 1 & 2 in uncompressed dual-laser 1.43:1 aspect ratio with a live discussion panel featuring sound design team members.',
+    highlights: ['1.43:1 Aspect Ratio Full Screen', 'Hans Zimmer Score Deep Dive', 'Commemorative Dune Art Print']
+  },
+  {
+    id: 'evt-movie-03',
+    title: 'BFI Sci-Fi Cinema Gala: Blade Runner & Interstellar Night',
+    category: 'movies',
+    date: '2026-07-22',
+    time: '08:00 PM BST',
+    location: 'BFI Southbank, London, UK',
+    type: 'Premiere',
+    status: 'past',
+    badge: 'Curated Retrospective',
+    attendees: '1,200 Cinephiles',
+    ticketPrice: '£28',
+    image: 'https://img.youtube.com/vi/mqqft2x_Aa4/hqdefault.jpg',
+    description: 'Celebration of visionary cinematic worldbuilding and synth-heavy soundtracks with discussions by leading visual effects supervisors.',
+    highlights: ['4K Remastered 35mm Projection', 'VFX Retrospective Panel', 'Exclusive Film Poster Gallery']
+  },
+
+  /* ================= TV SHOWS (3+ events) ================= */
+  {
+    id: 'evt-tv-01',
+    title: 'Arcane Season 2 Global Watch Party & Music Showcase',
+    category: 'tv-shows',
+    date: '2026-10-22',
+    time: '06:00 PM CET',
+    location: 'Grand Rex, Paris, France',
+    type: 'Watch Party',
+    status: 'upcoming',
+    badge: 'Official Premiere',
+    attendees: '2,800 Fans',
+    ticketPrice: '€50',
+    image: 'https://img.youtube.com/vi/fXmAurh012s/hqdefault.jpg',
+    description: 'Experience the explosive drama of Piltover and Zaun on Europe’s largest cinema screen, followed by live performances of the official soundtrack with Fortiche animators.',
+    highlights: ['Exclusive Act 1 Screening', 'Fortiche Concept Art Gallery', 'Live Soundtrack Performance']
+  },
+  {
+    id: 'evt-tv-02',
+    title: 'Stranger Things: Hawkins 1986 Interactive Experience',
+    category: 'tv-shows',
+    date: '2026-11-01',
+    time: '12:00 PM EST',
+    location: 'Brooklyn Navy Yard, New York',
+    type: 'Exhibition',
+    status: 'upcoming',
+    badge: 'Immersive',
+    attendees: '45,000 Over 2 Weeks',
+    ticketPrice: '$55 Adult / $40 Youth',
+    image: 'https://img.youtube.com/vi/b9EkMc79ZSU/hqdefault.jpg',
+    description: 'Step directly into the Upside Down, Starcourt Mall, and Creel House with interactive live actors, 80s arcade rooms, and Scoops Ahoy sundae stations.',
+    highlights: ['Upside Down Sensory Walkthrough', 'Hawkins High 80s Roller Disco', 'Original Props & Wardrobe Exhibit']
+  },
+  {
+    id: 'evt-tv-03',
+    title: 'House of the Dragon Season Finale Screening & Feast',
+    category: 'tv-shows',
+    date: '2026-08-15',
+    time: '07:30 PM GMT',
+    location: 'Edinburgh Castle, Scotland',
+    type: 'Premiere',
+    status: 'past',
+    badge: 'Historic Venue',
+    attendees: '800 VIP Guests',
+    ticketPrice: '£95 Feast Pass',
+    image: 'https://img.youtube.com/vi/DotnJ7tTA34/hqdefault.jpg',
+    description: 'Medieval banquet feast within historic castle ramparts followed by an outdoor cliffside projection of the season climax.',
+    highlights: ['Medieval Targaryen Banquet', 'Valyrian Steel Replica Showcase', 'Live Bagpipe & Cello Score']
+  },
+
+  /* ================= K-POP (3+ events) ================= */
+  {
+    id: 'evt-kpop-01',
+    title: 'KCON 2026 Los Angeles: The World’s Largest K-Culture Festival',
+    category: 'k-pop',
+    date: '2026-10-18',
+    time: '11:00 AM PST',
+    location: 'Crypto.com Arena & LA Convention Center, CA',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'Grand Mega Fest',
+    attendees: '150,000+ Fans',
+    ticketPrice: '$195 - $500 Combo',
+    image: 'https://img.youtube.com/vi/gdZLi9oWNZg/hqdefault.jpg',
+    description: 'Three packed days of K-Pop artist meet-and-greets, dance workshops with top choreographers, Korean beauty & food pavilions, and nightly superstar arena concerts.',
+    highlights: ['Stray Kids & NewJeans M Countdown Concert', 'Cover Dance Global Championship', 'Artist Hi-Touch Sessions']
+  },
+  {
+    id: 'evt-kpop-02',
+    title: 'BTS 2026 World Tour: Reunion Stadium Kickoff',
+    category: 'k-pop',
+    date: '2026-11-20',
+    time: '07:00 PM KST',
+    location: 'Seoul Olympic Stadium, South Korea',
+    type: 'Concert',
+    status: 'upcoming',
+    badge: 'Historic Comeback',
+    attendees: '70,000 In-Stadium',
+    ticketPrice: '₩198,000 ($150)',
+    image: '/assets/img/kpop/bts-tour.jpg',
+    description: 'The monumental return of all 7 members of BTS to the global stadium stage for the first time following completion of their military service, streamed globally to millions of ARMYs.',
+    highlights: ['All 7 Members on Stage Together', 'Synchronized Bluetooth ARMY Bomb Wave', '3-Hour Career Retrospective Setlist']
+  },
+  {
+    id: 'evt-kpop-03',
+    title: 'MAMA Awards 2026 (Mnet Asian Music Awards)',
+    category: 'k-pop',
+    date: '2026-06-10',
+    time: '06:00 PM JST',
+    location: 'Tokyo Dome, Japan',
+    type: 'Tournament',
+    status: 'past',
+    badge: 'Award Ceremony',
+    attendees: '50,000 Live Fans',
+    ticketPrice: '¥22,000',
+    image: '/assets/img/kpop/mama-awards.jpg',
+    description: 'The definitive Asian music awards ceremony presenting Artist of the Year, Song of the Year, and unforgettable crossover collaboration stages.',
+    highlights: ['Iconic 20-minute conceptual stages', 'Global Fan Choice Awards', 'Red Carpet Fashion Showcase']
+  },
+
+  /* ================= COMICS (3+ events) ================= */
+  {
+    id: 'evt-comic-01',
+    title: 'New York Comic Con 2026 (NYCC)',
+    category: 'comics',
+    date: '2026-10-08',
+    time: '10:00 AM EST',
+    location: 'Javits Center, New York, NY',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'East Coast Megafest',
+    attendees: '200,000+ Attendees',
+    ticketPrice: '$75 Single Day / $240 4-Day',
+    image: 'https://img.youtube.com/vi/shW9i6k8cB0/hqdefault.jpg',
+    description: 'The East Coast’s largest pop culture convention featuring comic publishers Marvel, DC, Image, Dark Horse, alongside legendary writers, pencillers, and cosplay contest champions.',
+    highlights: ['Artist Alley with 500+ Comic Creators', 'Exclusive NYCC Variant Covers', 'Cosplay Crown Championship']
+  },
+  {
+    id: 'evt-comic-02',
+    title: 'Batman Day 2026: Bat-Signal Global Lighting Ceremony',
+    category: 'comics',
+    date: '2026-09-20',
+    time: '08:00 PM Local',
+    location: 'Worldwide City Skylines (NYC, London, Tokyo, Paris)',
+    type: 'Watch Party',
+    status: 'past',
+    badge: 'Annual Celebration',
+    attendees: 'Global Community',
+    ticketPrice: 'Free Public Event',
+    image: 'https://img.youtube.com/vi/EXeTwQWrcwY/hqdefault.jpg',
+    description: 'Annual worldwide celebration of Gotham’s Dark Knight with real Bat-Signals projected across iconic skyscraper buildings, free comic giveaways, and midnight signings.',
+    highlights: ['Real Bat-Signals on Skyscrapers', 'Free Batman comic books at local shops', 'Special digital comic sales']
+  },
+  {
+    id: 'evt-comic-03',
+    title: 'Eisner Awards Ceremony & Comic Creators Summit',
+    category: 'comics',
+    date: '2026-11-12',
+    time: '07:00 PM PST',
+    location: 'Indigo Ballroom, Hilton Bayfront, San Diego',
+    type: 'Premiere',
+    status: 'upcoming',
+    badge: 'Industry Honors',
+    attendees: '1,500 Industry Leaders',
+    ticketPrice: 'Registration Required',
+    image: 'https://img.youtube.com/vi/0vxOhd4qlnA/hqdefault.jpg',
+    description: 'The Oscars of the comic book industry honoring outstanding graphic novels, best ongoing series, visionary lettering, and pioneering lifetime achievements.',
+    highlights: ['Hall of Fame Inductions', 'Best Graphic Album Award', 'Creators Round Table']
+  },
+
+  /* ================= MANGA (3+ events) ================= */
+  {
+    id: 'evt-manga-01',
+    title: 'Tokyo Manga & Dōjinshi Grand Expo (Comiket 106)',
+    category: 'manga',
+    date: '2026-12-28',
+    time: '10:00 AM JST',
+    location: 'Tokyo Big Sight, Odaiba, Tokyo',
+    type: 'Convention',
+    status: 'upcoming',
+    badge: 'Legendary Gathering',
+    attendees: '250,000+ Fans Daily',
+    ticketPrice: '¥1,500 Entry Wristband',
+    image: '/assets/img/manga/zoro.jpg',
+    description: 'The ultimate grassroots pilgrimage for manga lovers, independent doujin circles, legendary mangaka guest appearances, and rare self-published artbooks.',
+    highlights: ['Over 20,000 Independent Circles', 'Original Manga Artbooks & Zines', 'Iconic Cosplay Plaza Showcases']
+  },
+  {
+    id: 'evt-manga-02',
+    title: 'Berserk Memorial Tribute & Kentaro Miura Art Exhibition',
+    category: 'manga',
+    date: '2026-10-30',
+    time: '10:00 AM JST',
+    location: 'Mori Arts Center Gallery, Roppongi, Tokyo',
+    type: 'Exhibition',
+    status: 'upcoming',
+    badge: 'Museum Exhibition',
+    attendees: '50,000 Ticket Limit',
+    ticketPrice: '¥2,500 Advance',
+    image: '/assets/img/manga/guts.jpg',
+    description: 'Over 300 original hand-drawn Berserk manuscripts, life-size Dragon Slayer sword installation, and unreleased design notes by Studio Gaga.',
+    highlights: ['300+ Original Ink Manuscripts', 'Life-Size Zodd & Guts Sculptures', 'Commemorative Art Catalog']
+  },
+  {
+    id: 'evt-manga-03',
+    title: 'Shonen Jump Mangaka Masterclass & Global Live Stream',
+    category: 'manga',
+    date: '2026-07-15',
+    time: '02:00 PM JST',
+    location: 'Kyoto International Manga Museum',
+    type: 'Premiere',
+    status: 'past',
+    badge: 'Educational Workshop',
+    attendees: '300 In-Person / 500k Online',
+    ticketPrice: 'Free Online Stream',
+    image: '/assets/img/manga/denji.jpg',
+    description: 'Renowned manga editors and creators break down page paneling, narrative pacing, screentone application, and character conception.',
+    highlights: ['Live G-Pen Ink Demonstration', 'Storyboarding Breakdown', 'Audience Q&A on Breaking into Jump']
+  }
+];
+
+export function getEventsByCategory(category) {
+  if (!category || category === 'all') return EVENTS_DATA;
+  return EVENTS_DATA.filter(e => e.category.toLowerCase() === category.toLowerCase());
+}
+
+export function getEventById(id) {
+  return EVENTS_DATA.find(e => e.id === id) || null;
+}

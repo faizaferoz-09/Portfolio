@@ -1,0 +1,884 @@
+/* ==========================================================================
+   FandomVerse Global Design System & Stylesheet (index.css)
+   Theme: Fluxora Luxury Editorial Dark Theme (#120400 + #ff4d2d)
+   Fonts: Inter Tight, Inter, Instrument Serif, Playfair Display
+   ========================================================================== */
+
+:root, [data-theme="dark"] {
+  /* === Fluxora Luxury Dark Canvas & Surfaces === */
+  --bg-primary:       #120400;
+  --bg-secondary:     #0a0200;
+  --bg-surface:       rgba(255, 255, 255, 0.05);
+  --bg-card:          rgba(255, 255, 255, 0.05);
+  --bg-card-hover:    rgba(255, 255, 255, 0.08);
+  --bg-glass:         rgba(255, 255, 255, 0.06);
+  --bg-glass-border:  rgba(255, 255, 255, 0.1);
+  --bg-input:         rgba(255, 255, 255, 0.07);
+  --navbar-bg:        rgba(18, 4, 0, 0.72);
+  --footer-bg:        #080200;
+
+  /* === Fluxora Brand Accent Colors === */
+  --color-brand-orange:       #ff4d2d;
+  --color-brand-orange-hover: #ff684a;
+  --color-brand-orange-subtle:rgba(255, 77, 45, 0.12);
+  --color-brand-orange-border:rgba(255, 77, 45, 0.28);
+
+  --neon-cyan:          #ff4d2d;
+  --neon-cyan-glow:     rgba(255, 77, 45, 0.45);
+  --neon-violet:        #fb923c;
+  --neon-violet-glow:   rgba(251, 146, 60, 0.35);
+  --neon-blue:          #38bdf8;
+  --neon-blue-glow:     rgba(56, 189, 248, 0.35);
+  --neon-pink:          #ff4d2d;
+  --neon-pink-glow:     rgba(255, 77, 45, 0.45);
+  --neon-amber:         #fde047;
+  --neon-amber-glow:    rgba(253, 224, 71, 0.35);
+  --neon-emerald:       #22c55e;
+
+  /* === Typography: Crisp White & Platinum Tones === */
+  --text-primary:       #ffffff;
+  --text-secondary:     rgba(255, 255, 255, 0.72);
+  --text-muted:         rgba(255, 255, 255, 0.45);
+  --text-accent:        #ff4d2d;
+
+  /* === Typography Families === */
+  --font-sans:    'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:   'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --font-cyber:   'Inter Tight', -apple-system, sans-serif;
+
+  /* === Layout & Glass === */
+  --glass-blur:       blur(16px);
+  --glass-blur-heavy: blur(28px);
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  --shadow-neon-cyan:   0 0 25px rgba(255, 77, 45, 0.4);
+  --shadow-neon-violet: 0 0 25px rgba(251, 146, 60, 0.35);
+  --shadow-neon-pink:   0 0 25px rgba(255, 77, 45, 0.4);
+  --shadow-card:        0 16px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 77, 45, 0.05);
+
+  --transition-fast:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #120400;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar - Fluxora Brand Orange */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0300;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 77, 45, 0.5);
+  border-radius: var(--radius-full);
+}
+
+/* Typography Utilities — Strict Universal Heading Font ('Inter Tight') */
+h1, h2, h3, h4, h5, h6,
+.fv-section__title,
+.fv-choose__title,
+.page-header h1,
+.page-header h2,
+.section-header h2,
+.content-card-title,
+.article-title,
+.event-title,
+.merch-name,
+.media-card-title,
+.char-name {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.font-cyber {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+.font-display {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Typography Utilities */
+.font-cyber {
+  font-family: var(--font-cyber);
+  letter-spacing: 0.02em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-brand-orange {
+  color: var(--color-brand-orange) !important;
+}
+
+.bg-brand-orange {
+  background-color: var(--color-brand-orange) !important;
+}
+
+.border-brand-orange\/20 {
+  border-color: rgba(255, 77, 45, 0.2) !important;
+}
+
+.bg-brand-orange\/10 {
+  background-color: rgba(255, 77, 45, 0.1) !important;
+}
+
+/* Gradient Text Utilities with kinetic animated shimmer */
+@keyframes fvGlobalGradFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fvTitleGentlePulse {
+  0%, 100% {
+    text-shadow: 0 0 0 rgba(255, 77, 45, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 77, 45, 0.25);
+  }
+}
+
+.fv-grad-pastel, .text-gradient-cyan-purple, .fv-grad, .text-gradient-fire {
+  background: linear-gradient(135deg, #ffffff 15%, #ff8264 45%, #ff4d2d 80%, #fb923c 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphic Surfaces (Fluxora Dark Glass) */
+.glass-panel {
+  background: linear-gradient(180deg, rgba(26, 9, 6, 0.8) 0%, rgba(14, 4, 3, 0.92) 100%);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 77, 45, 0.22);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+  color: #ffffff;
+}
+
+.glass-panel-subtle {
+  background: rgba(26, 9, 6, 0.65);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 77, 45, 0.18);
+  border-radius: var(--radius-md);
+  color: #ffffff;
+}
+
+.glass-panel-glow {
+  background: linear-gradient(180deg, rgba(36, 12, 8, 0.85) 0%, rgba(18, 5, 3, 0.95) 100%);
+  backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid rgba(255, 77, 45, 0.4);
+  box-shadow: 0 0 35px rgba(255, 77, 45, 0.25), 0 16px 40px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+
+/* Fluxora Brand Orange Pill Button Styles */
+.fv-btn-pastel, .btn-cyber-primary, .btn-cyber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff !important;
+  background: var(--color-brand-orange);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: 0 6px 20px rgba(255, 77, 45, 0.35);
+  text-decoration: none;
+}
+.fv-btn-pastel:hover, .btn-cyber-primary:hover, .btn-cyber:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 77, 45, 0.5);
+  background: #ff684a;
+  color: #ffffff !important;
+}
+
+.fv-btn-pastel--secondary, .btn-cyber-secondary, .btn-cyber-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+}
+.fv-btn-pastel--secondary:hover, .btn-cyber-secondary:hover, .btn-cyber-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 77, 45, 0.5);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Fluxora Badge Tokens */
+.fv-badge-pastel, .badge-neon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.8rem;
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-full);
+  background: rgba(255, 77, 45, 0.12);
+  color: #ff4d2d;
+  border: 1px solid rgba(255, 77, 45, 0.3);
+}
+
+.fv-badge-pastel--lilac, .badge-purple {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.fv-badge-pastel--sky {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.fv-badge-pastel--rose, .badge-pink {
+  background: rgba(255, 77, 45, 0.15);
+  color: #ff4d2d;
+  border: 1px solid rgba(255, 77, 45, 0.3);
+}
+
+.fv-badge-pastel--mint {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.fv-badge-pastel--peach, .badge-amber {
+  background: rgba(253, 224, 71, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(253, 224, 71, 0.3);
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 43, 245, 0.6), inset 0 0 15px rgba(139, 43, 245, 0.3);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-pulse-neon {
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: floatSlow 4s infinite ease-in-out;
+}
+
+/* Responsive Grid Containers */
+.container-custom {
+  width: 100%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Hero Text Reveal & Glow Animations */
+@keyframes heroSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroGlowPulse {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(255, 77, 45, 0.4), 0 0 30px rgba(255, 122, 0, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 77, 45, 0.8), 0 0 55px rgba(255, 122, 0, 0.5), 0 0 75px rgba(255, 77, 45, 0.3);
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title-animated {
+  animation: heroSlideUp 0.8s ease-out forwards, heroGlowPulse 3s ease-in-out infinite 0.8s;
+}
+
+.hero-desc-animated {
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease-out 0.4s forwards;
+}
+
+.hero-badge-animated {
+  opacity: 0;
+  animation: heroFadeUp 0.6s ease-out 0.2s forwards;
+}
+
+.hero-cta-animated {
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease-out 0.6s forwards;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FANDOMVERSE UNIVERSAL SUBTLE TEXT & CONTENT ANIMATION SYSTEM
+   Fast, clean, professional (zero layout shift/jank)
+   GPU-accelerated: opacity, translateY & subtle filter blur
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Hero Cinematic Staggered Text Reveal ── */
+.fv-text-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fv-text-fade-up.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Flame accent words in hero heading: luminous shimmer on reveal */
+.fv-text-fade-up.revealed[style*="#ff4d2d"] {
+  text-shadow: 0 0 24px rgba(255, 77, 45, 0.55);
+}
+
+/* ── 2. Scroll-Triggered Text Reveal for Headings & Paragraphs ── */
+.fv-scroll-reveal,
+.fv-reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(2px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.fv-scroll-reveal.is-visible,
+.fv-reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+}
+
+/* Stagger delay classes for section header hierarchy */
+.fv-stagger-1 { transition-delay: 0.05s !important; }
+.fv-stagger-2 { transition-delay: 0.12s !important; }
+.fv-stagger-3 { transition-delay: 0.20s !important; }
+.fv-stagger-4 { transition-delay: 0.28s !important; }
+
+/* ── 3. Cards & Content Staggered Reveal (One-by-One Smooth Appearance) ── */
+.fv-card-stagger {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+  will-change: opacity, transform;
+}
+
+.fv-card-stagger.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Sequential delay for card grids */
+.fv-card-stagger:nth-child(1)  { transition-delay: 0.04s; }
+.fv-card-stagger:nth-child(2)  { transition-delay: 0.08s; }
+.fv-card-stagger:nth-child(3)  { transition-delay: 0.12s; }
+.fv-card-stagger:nth-child(4)  { transition-delay: 0.16s; }
+.fv-card-stagger:nth-child(5)  { transition-delay: 0.20s; }
+.fv-card-stagger:nth-child(6)  { transition-delay: 0.24s; }
+.fv-card-stagger:nth-child(7)  { transition-delay: 0.28s; }
+.fv-card-stagger:nth-child(8)  { transition-delay: 0.32s; }
+.fv-card-stagger:nth-child(9)  { transition-delay: 0.36s; }
+.fv-card-stagger:nth-child(10) { transition-delay: 0.40s; }
+.fv-card-stagger:nth-child(11) { transition-delay: 0.44s; }
+.fv-card-stagger:nth-child(12) { transition-delay: 0.48s; }
+
+/* ── Global Interactive Text Hover Animations (Pure Motion, No Highlight) ── */
+.fv-interactive-word {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.fv-interactive-word:hover {
+  transform: translateY(-5px);
+}
+
+/* ── Universal Kinetic Hover Animation Across Entire Website (Pure Physics Lift, No Highlight) ── */
+h1, h2, h3, h4, h5, h6,
+.fv-section__title,
+.fv-choose__title,
+.section-header h2,
+.page-header h1,
+.page-header h2,
+.content-card-title,
+.article-title,
+.event-title,
+.merch-name,
+.media-card-title,
+.char-name {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.28s ease !important;
+  will-change: transform;
+  cursor: default;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover,
+.fv-section__title:hover,
+.fv-choose__title:hover,
+.section-header h2:hover,
+.page-header h1:hover,
+.page-header h2:hover {
+  transform: translateY(-3px) !important;
+}
+
+/* Gradient text smooth kinetic lift */
+.fv-grad:hover,
+.fv-section__title:hover .fv-grad,
+.section-header h2:hover .fv-grad,
+.page-header h1:hover .fv-grad,
+.page-header h2:hover .fv-grad,
+h1:hover .fv-grad,
+h2:hover .fv-grad,
+h3:hover .fv-grad {
+  transform: translateY(-3px) scale(1.02) !important;
+}
+
+/* Section tags & Eyebrow Badges hover lift */
+.fv-section__tag:hover,
+.badge-neon:hover,
+.section-tag:hover,
+.fv-badge-pastel:hover,
+.tag-chip:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Descriptions & Paragraphs Below Headings Universal Styling */
+.fv-section__desc,
+.section-header p,
+.fv-choose__desc,
+.page-header p,
+.fv-hero-sub-text {
+  font-size: clamp(0.96rem, 1.08vw, 1.05rem) !important;
+  color: #ffffff !important;
+  font-weight: 450 !important;
+  line-height: 1.6 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+  letter-spacing: -0.01em;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.fv-section__desc:hover,
+.section-header p:hover,
+.fv-choose__desc:hover,
+.page-header p:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Content cards hover lift on titles */
+.content-card:hover h3,
+.content-card:hover .content-card-title,
+.article-card:hover h3,
+.article-card:hover .article-card__title,
+.char-card:hover h3,
+.char-card:hover .char-card__name,
+.merch-card:hover h3,
+.merch-card:hover .merch-card__title,
+.media-card:hover h3,
+.media-card:hover .media-card__title,
+.event-card:hover h3,
+.event-card:hover .event-card__title,
+.fv-char-card:hover .fv-char-card__name,
+.fv-fandom-card:hover .fv-fandom-card__title,
+.fv-universe-card:hover .fv-universe-card__title {
+  transform: translateX(3px) translateY(-2px) !important;
+}
+
+/* ── 4. Interactive Hover Animations on Buttons and Links ── */
+.btn-primary,
+.fv-universe-card__btn,
+.fv-nav-action-btn,
+.fv-nav-mega-trigger,
+.filter-btn,
+.category-tab-item,
+.tag-chip,
+.modal-close-btn,
+.sort-select {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s ease,
+              background-color 0.22s ease,
+              border-color 0.22s ease,
+              color 0.18s ease;
+}
+
+.btn-primary:hover,
+.fv-universe-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 77, 45, 0.38);
+}
+
+.btn-primary:active,
+.fv-universe-card__btn:active,
+.fv-nav-action-btn:active {
+  transform: translateY(0);
+}
+
+/* Subtle micro-nudge for icons on hover */
+.btn-primary:hover i,
+.btn-primary:hover svg,
+.fv-universe-card__btn:hover i,
+.fv-universe-card__btn:hover svg,
+.fv-nav-sub-link:hover i,
+.fv-nav-sub-link:hover svg,
+.fv-nav-action-btn:hover i,
+.fv-nav-action-btn:hover svg,
+.fv-nav-drop-item:hover i,
+.fv-nav-drop-item:hover svg {
+  transform: translateX(2.5px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Navigation sub-links interactive hover */
+.fv-nav-sub-link {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s ease,
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              text-shadow 0.2s ease !important;
+}
+
+.fv-nav-sub-link:hover {
+  transform: translateY(-1.5px);
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(255, 77, 45, 0.45);
+}
+
+/* Navigation Brand Logo hover animation */
+.fv-nav-brand {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fv-nav-brand:hover {
+  transform: scale(1.02);
+}
+
+/* Card titles subtle glow / color shift on card hover */
+.fv-universe-card:hover .fv-universe-card__title,
+.content-card:hover .content-card-title,
+.article-card:hover .article-card__title,
+.char-card:hover .char-card__name,
+.event-card:hover .event-card__title,
+.merch-card:hover .merch-card__title,
+.fv-fandom-card:hover .fv-fandom-card__title,
+.fv-trending-card:hover .fv-trending-card__title,
+.fv-gallery-card:hover .fv-gallery-card-title {
+  color: #ff684a !important;
+  transition: color 0.25s ease;
+}
+
+/* Bookmark button gentle bounce & glow */
+.content-card-bookmark-btn {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              color 0.2s ease;
+}
+.content-card-bookmark-btn:hover {
+  transform: scale(1.12);
+}
+
+/* ── 5. Navigation Text & Brand Smooth Reveal On Page Load ── */
+@keyframes navBrandFade {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navLinkFade {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fv-nav-brand {
+  animation: navBrandFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(1) { animation: navLinkFade 0.4s ease-out 0.08s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(2) { animation: navLinkFade 0.4s ease-out 0.14s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(3) { animation: navLinkFade 0.4s ease-out 0.20s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(4) { animation: navLinkFade 0.4s ease-out 0.26s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(5) { animation: navLinkFade 0.4s ease-out 0.32s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(6) { animation: navLinkFade 0.4s ease-out 0.38s both; }
+.fv-nav-sub-links .fv-nav-sub-link:nth-child(7) { animation: navLinkFade 0.4s ease-out 0.44s both; }
+
+.fv-nav-actions .fv-nav-action-btn {
+  animation: navLinkFade 0.45s ease-out 0.16s both;
+}
+
+/* ── 6. Dedicated Gallery Animated Header Styles ── */
+@keyframes galleryGradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fv-gallery-animated-gradient {
+  background: linear-gradient(135deg, #ff4d2d 0%, #ff856b 25%, #fde047 50%, #ff4d2d 75%, #ff7a45 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: galleryGradientShimmer 4s ease infinite;
+  display: inline-block;
+}
+
+@keyframes galleryBadgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(255, 77, 45, 0.25), inset 0 0 10px rgba(255, 77, 45, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 77, 45, 0.55), inset 0 0 14px rgba(255, 77, 45, 0.3);
+  }
+}
+
+.fv-gallery-hero-badge {
+  animation: galleryBadgeGlow 3s ease-in-out infinite;
+}
+
+@keyframes galleryTickerFade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fv-gallery-ticker-text {
+  animation: galleryTickerFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gallery Staggered Animated Text Keyframes */
+@keyframes galleryTextSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes galleryTextGlowPulse {
+  0%, 100% {
+    text-shadow: 0 0 16px rgba(255, 77, 45, 0.4), 0 0 32px rgba(255, 122, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 28px rgba(255, 77, 45, 0.8), 0 0 52px rgba(255, 122, 0, 0.45);
+  }
+}
+
+.fv-gallery-title-line-1 {
+  display: inline-block;
+  animation: galleryTextSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.fv-gallery-title-line-2 {
+  display: inline-block;
+  animation: galleryTextSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both,
+             galleryTextGlowPulse 4s ease-in-out 1s infinite;
+}
+
+.fv-gallery-title-line-3 {
+  display: block;
+  animation: galleryTextSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.fv-gallery-ticker-box {
+  animation: galleryTextSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.fv-gallery-stats-row {
+  animation: galleryTextSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.fv-gallery-category-bar {
+  animation: galleryTextSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+/* Prevent accidental text selection / blue highlight on buttons */
+button,
+button *,
+.category-tab-item,
+.tag-chip,
+.filter-btn {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Theme-matching subtle text selection highlight */
+::selection {
+  background: rgba(255, 77, 45, 0.35);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(255, 77, 45, 0.35);
+  color: #ffffff;
+}
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fv-text-fade-up,
+  .fv-scroll-reveal,
+  .fv-reveal-on-scroll,
+  .fv-card-stagger,
+  .fv-nav-brand,
+  .fv-nav-sub-links .fv-nav-sub-link,
+  .fv-nav-actions .fv-nav-action-btn,
+  .fv-gallery-animated-gradient,
+  .fv-gallery-hero-badge,
+  .fv-gallery-ticker-text,
+  .fv-gallery-title-line-1,
+  .fv-gallery-title-line-2,
+  .fv-gallery-title-line-3,
+  .fv-gallery-ticker-box,
+  .fv-gallery-stats-row,
+  .fv-gallery-category-bar {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+

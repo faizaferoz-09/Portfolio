@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="fvSimpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean "F" Emblem Badge on Left (Exact match to favicon) -->
+  <g transform="translate(12, 13) scale(0.54)">
+    <rect x="6" y="6" width="88" height="88" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="3" />
+    <path d="M 28 22 C 28 19.8 29.8 18 32 18 L 70 18 C 72.8 18 75 20.2 75 23 C 75 25.8 72.8 28 70 28 L 41 28 L 41 43 L 64 43 C 66.8 43 69 45.2 69 48 C 69 50.8 66.8 53 64 53 L 41 53 L 41 78 C 41 80.2 39.2 82 37 82 L 32 82 C 29.8 82 28 80.2 28 78 Z" fill="url(#fvSimpleGrad)" />
+  </g>
+
+  <!-- Clean Professional Typography -->
+  <text x="78" y="46" font-family="'Chakra Petch', sans-serif" font-size="28" font-weight="900" fill="#1e1b4b" letter-spacing="1">FAN<tspan fill="url(#fvSimpleGrad)">VERSE</tspan></text>
+  <text x="80" y="63" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="3.2">POP CULTURE UNIVERSE</text>
+</svg>
