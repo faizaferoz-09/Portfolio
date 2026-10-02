@@ -1,0 +1,1196 @@
+/* =================================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   ROOT COLORS
+================================= */
+
+:root {
+    --beige: #F5EFE6;
+    --cream: #FBF8F3;
+    --lavender: #C8B6E8;
+    --light-purple: #E7DDF5;
+    --soft-purple: #DDD0EF;
+    --purple: #8D78B5;
+    --purple-dark: #76619E;
+    --text: #40394A;
+    --muted: #8A8292;
+    --border: #DDD4E5;
+    --white: #FFFFFF;
+    --shadow: 0 20px 50px rgba(111, 91, 137, 0.15);
+}
+
+
+/* =================================
+   BODY
+================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 255, 255, 0.35) 0 5%,
+            transparent 6%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(255, 255, 255, 0.25) 0 7%,
+            transparent 8%
+        ),
+        linear-gradient(
+            135deg,
+            #CBB6E7,
+            #E4D7F2 45%,
+            #C8B1E3
+        );
+
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* =================================
+   LOADING SCREEN
+================================= */
+
+.loader-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 255, 255, 0.35) 0 5%,
+            transparent 6%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(255, 255, 255, 0.25) 0 7%,
+            transparent 8%
+        ),
+        linear-gradient(
+            135deg,
+            #CBB6E7,
+            #E4D7F2 45%,
+            #C8B1E3
+        );
+
+    overflow: hidden;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+
+/* =================================
+   HIDE LOADER
+================================= */
+
+.loader-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =================================
+   LOADER CARD
+================================= */
+
+.loader-card {
+    position: relative;
+
+    width: min(390px, 88vw);
+    min-height: 520px;
+
+    padding: 42px 34px 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFDF9,
+            #F6EEE5
+        );
+
+    border-radius: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 30px 70px rgba(74, 55, 91, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   LOADER CLOUDS
+================================= */
+
+.loader-cloud {
+    position: absolute;
+
+    width: 75px;
+    height: 30px;
+
+    background: #FFFDF9;
+
+    border-radius: 50px;
+
+    opacity: 0.85;
+
+    box-shadow:
+        0 8px 15px rgba(99, 75, 118, 0.12);
+}
+
+
+.loader-cloud::before,
+.loader-cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: #FFFDF9;
+
+    border-radius: 50%;
+}
+
+
+.loader-cloud::before {
+    width: 35px;
+    height: 35px;
+
+    left: 12px;
+    bottom: 8px;
+}
+
+
+.loader-cloud::after {
+    width: 42px;
+    height: 42px;
+
+    right: 10px;
+    bottom: 5px;
+}
+
+
+.cloud-one {
+    top: 85px;
+    left: -28px;
+
+    transform: rotate(-8deg);
+}
+
+
+.cloud-two {
+    bottom: 95px;
+    right: -30px;
+
+    transform: rotate(8deg);
+}
+
+
+/* =================================
+   SPARKLES
+================================= */
+
+.loader-sparkle {
+    position: absolute;
+
+    color: #C4A7E7;
+    font-size: 28px;
+
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+
+.sparkle-one {
+    top: 62px;
+    right: 58px;
+}
+
+
+.sparkle-two {
+    top: 125px;
+    left: 45px;
+
+    font-size: 20px;
+
+    animation-delay: 0.5s;
+}
+
+
+.sparkle-three {
+    bottom: 85px;
+    right: 48px;
+
+    font-size: 22px;
+
+    animation-delay: 1s;
+}
+
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+
+/* =================================
+   LOADER LOGO
+================================= */
+
+.loader-logo {
+    width: 92px;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #CDB6ED,
+            #A98BD4
+        );
+
+    color: #FFFFFF;
+
+    font-size: 42px;
+
+    box-shadow:
+        0 15px 28px rgba(125, 96, 164, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+
+    animation: logoFloat 2.5s ease-in-out infinite;
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =================================
+   LOADER BRAND
+================================= */
+
+.loader-card h1 {
+    margin: 0;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #8065AA;
+}
+
+
+.loader-welcome {
+    margin: 7px 0 28px;
+
+    color: #817789;
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+.loader-welcome span {
+    color: #9A7AC5;
+    font-weight: 700;
+}
+
+
+/* =================================
+   LOADER STATUS
+================================= */
+
+.loader-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: #8A7B91;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.loader-status i {
+    color: #A486CF;
+
+    animation: sparkleRotate 1.5s linear infinite;
+}
+
+
+@keyframes sparkleRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =================================
+   LOADER PROGRESS
+================================= */
+
+.loader-progress {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #E8DFEB;
+
+    box-shadow:
+        inset 0 2px 4px rgba(100, 80, 120, 0.08);
+}
+
+
+.loader-progress-bar {
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #B99BDF,
+            #8F72BD,
+            #C3A8E4
+        );
+
+    animation: loadingProgress 1.5s ease forwards;
+}
+
+
+@keyframes loadingProgress {
+
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+/* =================================
+   MAIN APP
+================================= */
+
+.calculator-app {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 15px;
+
+    background: transparent;
+}
+
+
+/* =================================
+   CALCULATOR CARD
+================================= */
+
+.calculator {
+    width: 100%;
+    max-width: 430px;
+
+    background: var(--cream);
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   BRAND
+================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 14px;
+
+    background: var(--lavender);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.brand-info h1 {
+    font-size: 20px;
+
+    color: var(--text);
+
+    margin-bottom: 2px;
+}
+
+
+.brand-info p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =================================
+   THEME BUTTON
+================================= */
+
+.theme-btn {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    background: var(--light-purple);
+
+    color: var(--purple-dark);
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+
+.theme-btn:hover {
+    background: var(--lavender);
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   DISPLAY
+================================= */
+
+.calculator-display {
+    background: #EEE7F4;
+
+    border-radius: 20px;
+
+    min-height: 125px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+
+.previous-display {
+    min-height: 22px;
+
+    width: 100%;
+
+    text-align: right;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.current-display {
+    width: 100%;
+
+    text-align: right;
+
+    color: var(--text);
+
+    font-size: 40px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+
+.current-display::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =================================
+   BUTTON GRID
+================================= */
+
+.calculator-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.calculator-btn {
+    height: 62px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: #F1EDE7;
+
+    color: var(--text);
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.calculator-btn:hover {
+    background: #E8E0ED;
+
+    transform: translateY(-2px);
+}
+
+
+.calculator-btn:active {
+    transform: scale(0.94);
+}
+
+
+/* =================================
+   FUNCTION BUTTONS
+================================= */
+
+.function-btn {
+    background: var(--light-purple);
+
+    color: var(--purple-dark);
+
+    font-weight: 600;
+}
+
+
+.function-btn:hover {
+    background: var(--soft-purple);
+}
+
+
+/* =================================
+   OPERATOR BUTTONS
+================================= */
+
+.operator-btn {
+    background: var(--lavender);
+
+    color: #514367;
+
+    font-size: 21px;
+
+    font-weight: 600;
+}
+
+
+.operator-btn:hover {
+    background: #BBA5DF;
+}
+
+
+/* =================================
+   EQUAL BUTTON
+================================= */
+
+.equal-btn {
+    background: var(--purple);
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 600;
+}
+
+
+.equal-btn:hover {
+    background: var(--purple-dark);
+}
+
+
+/* =================================
+   ZERO BUTTON
+================================= */
+
+.zero-btn {
+    grid-column: span 2;
+}
+
+
+/* =================================
+   HISTORY
+================================= */
+
+.history-section {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.history-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.history-icon {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+
+    background: var(--light-purple);
+
+    color: var(--purple-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+
+.history-title h2 {
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+
+.history-title p {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =================================
+   CLEAR HISTORY
+================================= */
+
+.clear-history-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #A36D67;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.clear-history-btn:hover {
+    color: #80504B;
+}
+
+
+/* =================================
+   HISTORY LIST
+================================= */
+
+.history-list {
+    max-height: 180px;
+
+    overflow-y: auto;
+}
+
+
+.empty-history {
+    text-align: center;
+
+    padding: 18px;
+
+    color: var(--muted);
+
+    background: #F8F4EF;
+
+    border-radius: 15px;
+}
+
+
+.empty-history i {
+    font-size: 20px;
+
+    margin-bottom: 7px;
+
+    opacity: 0.6;
+}
+
+
+.empty-history p {
+    font-size: 11px;
+}
+
+
+/* =================================
+   HISTORY ITEM
+================================= */
+
+.history-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 14px;
+
+    margin-bottom: 8px;
+
+    background: #F8F4EF;
+
+    border-radius: 13px;
+}
+
+
+.history-expression {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.history-result {
+    color: var(--purple-dark);
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+
+/* =================================
+   DARK MODE
+================================= */
+
+/* Dark Theme Colors */
+
+body.dark-mode {
+    --beige: #15111B;
+    --cream: #292330;
+    --lavender: #8F79B5;
+    --light-purple: #40354D;
+    --soft-purple: #514361;
+    --purple: #9B82C2;
+    --purple-dark: #C2B0DC;
+    --text: #F5F0FA;
+    --muted: #B8AFC1;
+    --border: #494052;
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.40);
+}
+
+
+/* Dark Page Background */
+
+body.dark-mode {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(137, 105, 175, 0.22) 0 5%,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(112, 82, 150, 0.18) 0 7%,
+            transparent 23%
+        ),
+        linear-gradient(
+            135deg,
+            #120F16,
+            #241C2D 45%,
+            #15111B
+        );
+
+    color: var(--text);
+}
+
+
+/* Dark Calculator */
+
+body.dark-mode .calculator {
+    background: #292330;
+
+    border-color: #494052;
+}
+
+
+/* Dark Display */
+
+body.dark-mode .calculator-display {
+    background: #201A27;
+}
+
+
+/* Dark Buttons */
+
+body.dark-mode .calculator-btn {
+    background: #342D3B;
+
+    color: #F5F0FA;
+}
+
+
+body.dark-mode .calculator-btn:hover {
+    background: #43394C;
+}
+
+
+/* Dark Function Buttons */
+
+body.dark-mode .function-btn {
+    background: #40354D;
+
+    color: #CDBDE0;
+}
+
+
+/* Dark Operator Buttons */
+
+body.dark-mode .operator-btn {
+    background: #67547D;
+
+    color: #F8F3FF;
+}
+
+
+/* Dark Equal Button */
+
+body.dark-mode .equal-btn {
+    background: #8F79B5;
+
+    color: #FFFFFF;
+}
+
+
+body.dark-mode .equal-btn:hover {
+    background: #76619E;
+}
+
+
+/* Dark History */
+
+body.dark-mode .empty-history,
+body.dark-mode .history-item {
+    background: #332C3A;
+}
+
+
+/* Dark History Icon */
+
+body.dark-mode .history-icon {
+    background: #40354D;
+
+    color: #C2B0DC;
+}
+
+
+/* Dark Theme Button */
+
+body.dark-mode .theme-btn {
+    background: #40354D;
+
+    color: #C2B0DC;
+
+    border-color: #51475A;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 480px) {
+
+    /* Loader */
+
+    .loader-card {
+        width: 88vw;
+
+        min-height: 490px;
+
+        padding: 35px 25px 28px;
+
+        border-radius: 34px;
+    }
+
+
+    .loader-logo {
+        width: 82px;
+        height: 82px;
+
+        font-size: 36px;
+    }
+
+
+    .loader-card h1 {
+        font-size: 34px;
+    }
+
+
+    .loader-welcome {
+        font-size: 15px;
+    }
+
+
+    /* Calculator */
+
+    .calculator-app {
+        padding: 18px 10px;
+    }
+
+
+    .calculator {
+        padding: 17px;
+
+        border-radius: 25px;
+    }
+
+
+    .calculator-header {
+        margin-bottom: 15px;
+    }
+
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .brand-info h1 {
+        font-size: 18px;
+    }
+
+
+    .calculator-display {
+        min-height: 110px;
+
+        padding: 17px;
+    }
+
+
+    .current-display {
+        font-size: 32px;
+    }
+
+
+    .calculator-buttons {
+        gap: 8px;
+    }
+
+
+    .calculator-btn {
+        height: 56px;
+
+        border-radius: 14px;
+
+        font-size: 17px;
+    }
+
+
+    .history-title h2 {
+        font-size: 13px;
+    }
+}
+
+
+/* =================================
+   VERY SMALL SCREEN
+================================= */
+
+@media (max-width: 350px) {
+
+    .calculator {
+        padding: 13px;
+    }
+
+
+    .calculator-btn {
+        height: 51px;
+
+        font-size: 16px;
+    }
+
+
+    .current-display {
+        font-size: 28px;
+    }
+
+
+    .calculator-buttons {
+        gap: 6px;
+    }
+
+
+    .loader-card {
+        min-height: 460px;
+
+        padding: 30px 20px;
+    }
+
+
+    .loader-logo {
+        width: 75px;
+        height: 75px;
+
+        font-size: 32px;
+    }
+
+
+    .loader-card h1 {
+        font-size: 30px;
+    }
+}

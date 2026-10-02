@@ -1,0 +1,270 @@
+/* ── Reset & Base ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0b131e;
+  color: #e2e8f0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  padding: 28px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analysis-card {
+  width: 100%;
+  max-width: 960px;
+  background: #111c28;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── 1. Header Section ── */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  box-shadow: 0 0 14px rgba(0, 230, 118, 0.15);
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.chart-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+.legend-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.leg-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.leg-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ── 2. Summary Chips Row ── */
+.summary-chips-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 18px;
+  border-radius: 14px;
+}
+
+.chip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chip-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chip-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.chip-value.green { color: #00e676; }
+.chip-value.yellow { color: #fbbf24; }
+.chip-value.blue { color: #38bdf8; }
+
+/* ── 3. Main Chart Card & Controls ── */
+.main-chart-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.chart-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.chart-toggle-group {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: #00e676;
+  color: #0b131e;
+}
+
+.chart-container-wrap {
+  position: relative;
+  height: 320px;
+  width: 100%;
+}
+
+/* ── 4. Insights Grid ── */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.insight-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.insight-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.wicket-pills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wicket-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.w-over {
+  font-weight: 700;
+  color: #f87171;
+}
+
+.w-detail {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phase-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phase-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.phase-name {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.phase-val {
+  font-weight: 700;
+  color: #00e676;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .summary-chips-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-chips-row {
+    grid-template-columns: 1fr;
+  }
+}

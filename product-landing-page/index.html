@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Premium Products</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gem"></i>
+                <span>Lumina</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">2</span>
+                </a>
+                <a href="#" class="btn-primary">Shop Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">New Collection 2026</span>
+                <h1>Elevate Your <br><span class="gradient-text">Everyday Style</span></h1>
+                <p>Discover premium products crafted with precision and designed for those who appreciate the finer
+                    things in life.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-main">Explore Collection</a>
+                    <a href="#" class="btn-outline">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Video
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>50K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.9</h3>
+                        <p>Average Rating</p>
+                    </div>
+                    <div class="stat">
+                        <h3>200+</h3>
+                        <p>Premium Products</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=700&fit=crop"
+                        alt="Premium Product">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <strong>Top Rated</strong>
+                            <span>Best Seller</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <strong>Free Shipping</strong>
+                            <span>Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <p class="brands-title">Trusted by leading brands worldwide</p>
+            <div class="brands-logos">
+                <div class="brand-logo"><i class="fab fa-apple"></i></div>
+                <div class="brand-logo"><i class="fab fa-google"></i></div>
+                <div class="brand-logo"><i class="fab fa-amazon"></i></div>
+                <div class="brand-logo"><i class="fab fa-microsoft"></i></div>
+                <div class="brand-logo"><i class="fab fa-spotify"></i></div>
+                <div class="brand-logo"><i class="fab fa-airbnb"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Collection</span>
+                <h2>Featured Products</h2>
+                <p>Handpicked premium items just for you</p>
+            </div>
+
+            <div class="product-tabs">
+                <button class="tab-btn active" data-tab="all">All</button>
+                <button class="tab-btn" data-tab="electronics">Electronics</button>
+                <button class="tab-btn" data-tab="fashion">Fashion</button>
+                <button class="tab-btn" data-tab="accessories">Accessories</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-badge">-20%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop"
+                            alt="Headphones">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3>Premium Wireless Headphones</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199</span>
+                            <span class="old-price">$249</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
+                            alt="T-Shirt">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3>Designer Cotton T-Shirt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49</span>
+                            <span class="old-price">$69</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&h=400&fit=crop"
+                            alt="Watch">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Accessories</span>
+                        <h3>Luxury Minimal Watch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.2)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299</span>
+                            <span class="old-price">$349</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-badge">-15%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585565804112-f201f68c48b4?w=400&h=400&fit=crop"
+                            alt="Camera">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3>Pro Mirrorless Camera</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$899</span>
+                            <span class="old-price">$1059</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop"
+                            alt="Sneakers">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3>Urban Runner Sneakers</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129</span>
+                            <span class="old-price">$159</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop"
+                            alt="Bag">
+                        <div class="product-overlay">
+                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Accessories</span>
+                        <h3>Leather Travel Backpack</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$179</span>
+                            <span class="old-price">$219</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="btn-main">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2>What Makes Us Special</h2>
+                <p>We go the extra mile to ensure your satisfaction</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Free worldwide shipping on all orders over $50. Fast and reliable delivery to your doorstep.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure payment with SSL encryption. Your data is always protected with us.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day hassle-free return policy. Not satisfied? Get a full refund, no questions asked.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available round the clock to assist you with anything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-text">
+                    <span class="promo-label">Limited Time Offer</span>
+                    <h2>Summer Sale <span class="highlight">Up to 50% Off</span></h2>
+                    <p>Grab your favorite products at unbeatable prices. Sale ends in:</p>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="count" id="days">02</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count" id="hours">14</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count" id="minutes">35</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count" id="seconds">48</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-main">Shop the Sale</a>
+                </div>
+                <div class="promo-image">
+                    <img src="assets/img/limited-offer.png"
+                        alt="Sale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2>What Our Customers Say</h2>
+                <p>Real reviews from real people</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Absolutely love the quality! The headphones exceeded my expectations.
+                        Sound is crystal clear and the design is stunning."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                            alt="Sarah">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fast shipping and amazing customer service. The watch I ordered looks
+                        even better in person. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                            alt="Michael">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Great value for money. The backpack is durable, stylish, and perfect
+                        for my daily commute. Will definitely buy again!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                            alt="Emily">
+                        <div>
+                            <h4>Emily Davis</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest updates on new products, exclusive offers, and more delivered straight to your
+                        inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn-main">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note"><i class="fas fa-lock"></i> We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-gem"></i>
+                        <span>Lumina</span>
+                    </a>
+                    <p>Your destination for premium lifestyle products. Quality, style, and satisfaction guaranteed.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> hello@lumina.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> Lumina Store. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

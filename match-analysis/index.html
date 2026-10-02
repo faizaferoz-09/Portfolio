@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innings Progression</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+</head>
+<body>
+
+  <div class="analysis-card">
+
+    <!-- 1. Header Bar: Logo + Title + Legend -->
+    <header class="card-header">
+      <div class="brand-group">
+        <img src="assets/img/logo.jpg" alt="Logo" class="brand-logo">
+        <div>
+          <h1 class="chart-title">Innings Progression</h1>
+          <p class="chart-subtitle">Match Performance & Over-by-Over Analysis</p>
+        </div>
+      </div>
+
+      <div class="legend-group">
+        <div class="leg-chip">
+          <img src="assets/img/bat.png" class="leg-img" alt="bat">
+          <span>Runs Scored</span>
+        </div>
+        <div class="leg-chip leg-wicket">
+          <img src="assets/img/ball.png" class="leg-img" alt="ball">
+          <span>Wicket Fell</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Match Summary Bar (Stats Chips) -->
+    <div class="summary-chips-row">
+      <div class="chip-item">
+        <span class="chip-label">Total Score</span>
+        <span class="chip-value green" id="chipScore">92 / 3</span>
+      </div>
+      <div class="chip-item">
+        <span class="chip-label">Overs Played</span>
+        <span class="chip-value" id="chipOvers">10.0</span>
+      </div>
+      <div class="chip-item">
+        <span class="chip-label">Current Run Rate</span>
+        <span class="chip-value yellow" id="chipRunRate">9.20</span>
+      </div>
+      <div class="chip-item">
+        <span class="chip-label">Highest Over</span>
+        <span class="chip-value blue" id="chipHighestOver">Over 7 (14 Runs)</span>
+      </div>
+    </div>
+
+    <!-- 3. Primary Main Chart Container -->
+    <div class="main-chart-card">
+      <div class="chart-header-row">
+        <h2 class="section-heading">Cumulative Score & Wicket Timeline</h2>
+        <div class="chart-toggle-group">
+          <button class="toggle-btn active" id="btnCumulative">Cumulative Runs</button>
+          <button class="toggle-btn" id="btnPerOver">Runs Per Over</button>
+        </div>
+      </div>
+      <div class="chart-container-wrap">
+        <canvas id="mainCricketChart"></canvas>
+      </div>
+    </div>
+
+    <!-- 4. Secondary Breakdown Grid (Key Match Insights) -->
+    <div class="insights-grid">
+      <!-- Wickets Breakdown Card -->
+      <div class="insight-card">
+        <h3 class="insight-title">🔴 Fall of Wickets</h3>
+        <div class="wicket-pills-list" id="wicketList">
+          <div class="wicket-pill">
+            <span class="w-over">Over 3.4</span>
+            <span class="w-detail">Wicket 1 • 25 Runs</span>
+          </div>
+          <div class="wicket-pill">
+            <span class="w-over">Over 5.2</span>
+            <span class="w-detail">Wicket 2 • 43 Runs</span>
+          </div>
+          <div class="wicket-pill">
+            <span class="w-over">Over 8.5</span>
+            <span class="w-detail">Wicket 3 • 73 Runs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Over-by-Over Highlights Card -->
+      <div class="insight-card">
+        <h3 class="insight-title">⚡ Match Phase Summary</h3>
+        <div class="phase-stats-list">
+          <div class="phase-item">
+            <span class="phase-name">Powerplay (Overs 1 - 6)</span>
+            <span class="phase-val">54 Runs / 2 Wickets</span>
+          </div>
+          <div class="phase-item">
+            <span class="phase-name">Middle Overs (Overs 7 - 10)</span>
+            <span class="phase-val">38 Runs / 1 Wicket</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

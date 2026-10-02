@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Numelle - Smart Calculator</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/img/favicon.png">
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- =================================
+     LOADING SCREEN
+================================== -->
+
+<div class="loader-screen" id="loaderScreen">
+
+    <div class="loader-card">
+
+        <!-- Decorative Elements -->
+        <span class="loader-cloud cloud-one"></span>
+        <span class="loader-cloud cloud-two"></span>
+
+        <span class="loader-sparkle sparkle-one">✦</span>
+        <span class="loader-sparkle sparkle-two">✦</span>
+        <span class="loader-sparkle sparkle-three">✧</span>
+
+    
+
+        <!-- Logo -->
+        <div class="loader-logo">
+            <i class="fa-solid fa-calculator"></i>
+        </div>
+
+        <!-- Brand -->
+        <h1>Numelle</h1>
+
+        <p class="loader-welcome">
+            Welcome to your<br>
+            <span>Smart Calculator</span>
+        </p>
+
+        <!-- Loading Text -->
+        <div class="loader-status">
+
+            <span>Getting things ready</span>
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        </div>
+
+        <!-- Progress -->
+        <div class="loader-progress">
+
+            <div class="loader-progress-bar"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- =================================
+         MAIN CALCULATOR APP
+    ================================== -->
+
+    <main class="calculator-app">
+
+        <section class="calculator">
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
+            <header class="calculator-header">
+
+                <div class="brand">
+
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div class="brand-info">
+                        <h1>Numelle</h1>
+                        <p>Smart Calculator</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Theme Button -->
+
+                <button
+                    type="button"
+                    class="theme-btn"
+                    id="themeBtn"
+                    aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </header>
+
+
+            <!-- =================================
+                 DISPLAY
+            ================================== -->
+
+            <div class="calculator-display">
+
+                <div
+                    class="previous-display"
+                    id="previousDisplay">
+                </div>
+
+                <div
+                    class="current-display"
+                    id="currentDisplay">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CALCULATOR BUTTONS
+            ================================== -->
+
+            <div class="calculator-buttons">
+
+                <!-- Row 1 -->
+
+                <button
+                    type="button"
+                    class="calculator-btn function-btn"
+                    data-action="clear">
+                    AC
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn function-btn"
+                    data-action="delete">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn function-btn"
+                    data-action="percentage">
+                    %
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn operator-btn"
+                    data-operator="/">
+                    ÷
+                </button>
+
+
+                <!-- Row 2 -->
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="7">
+                    7
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="8">
+                    8
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="9">
+                    9
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn operator-btn"
+                    data-operator="*">
+                    ×
+                </button>
+
+
+                <!-- Row 3 -->
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="4">
+                    4
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="5">
+                    5
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="6">
+                    6
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn operator-btn"
+                    data-operator="-">
+                    −
+                </button>
+
+
+                <!-- Row 4 -->
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="1">
+                    1
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="2">
+                    2
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number="3">
+                    3
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn operator-btn"
+                    data-operator="+">
+                    +
+                </button>
+
+
+                <!-- Row 5 -->
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn zero-btn"
+                    data-number="0">
+                    0
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn number-btn"
+                    data-number=".">
+                    .
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-btn equal-btn"
+                    data-action="calculate">
+                    =
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 HISTORY
+            ================================== -->
+
+            <section class="history-section">
+
+                <div class="history-header">
+
+                    <div class="history-title">
+
+                        <div class="history-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <div>
+                            <h2>Calculation History</h2>
+                            <p>Your recent calculations</p>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="clear-history-btn"
+                        id="clearHistoryBtn">
+
+                        <i class="fa-solid fa-trash-can"></i>
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="history-list"
+                    id="historyList">
+
+                    <div class="empty-history">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                        <p>No calculations yet</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
