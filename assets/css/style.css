@@ -1501,3 +1501,37 @@ footer {
     grid-template-columns: 1fr
   }
 }
+
+/* ===== FORM VALIDATION STYLES ===== */
+.f-input.error,
+.f-area.error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35) !important;
+  background: rgba(239, 68, 68, 0.04) !important;
+}
+
+.f-input.valid,
+.f-area.valid {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25) !important;
+}
+
+.f-error-msg {
+  display: block;
+  font-size: 0.74rem;
+  color: #f87171;
+  margin-top: 0.35rem;
+  font-family: var(--mono);
+}
+
+.f-success-toast {
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-// ==========================================
+﻿// ==========================================
 // PORTFOLIO - Main JavaScript
 // ==========================================
 
@@ -200,17 +200,118 @@ if (canvas) {
   init(); loop();
 }
 
-// ===== Contact Form =====
+// ===== Contact Form Validation & Submission =====
 const form = document.getElementById("contactForm");
-form && form.addEventListener("submit", e => {
-  e.preventDefault();
-  const btn = form.querySelector(".f-submit");
-  const orig = btn.textContent;
-  btn.textContent = "✅ Message Sent!";
-  btn.style.background = "linear-gradient(135deg,#10b981,#06b6d4)";
-  setTimeout(() => {
-    btn.textContent = orig;
-    btn.style.background = "";
-    form.reset();
-  }, 3000);
-});
+
+if (form) {
+  const fields = {
+    name: {
+      el: document.getElementById("name"),
+      validate: val => val.trim().length >= 3,
+      errorMsg: "Full name must be at least 3 characters long."
+    },
+    email: {
+      el: document.getElementById("email"),
+      validate: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()),
+      errorMsg: "Please enter a valid email address (e.g. name@example.com)."
+    },
+    subject: {
+      el: document.getElementById("subject"),
+      validate: val => val.trim().length >= 4,
+      errorMsg: "Subject must be at least 4 characters long."
+    },
+    message: {
+      el: document.getElementById("message"),
+      validate: val => val.trim().length >= 10,
+      errorMsg: "Message must be at least 10 characters long."
+    }
+  };
+
+  function validateField(fieldKey) {
+    const field = fields[fieldKey];
+    if (!field || !field.el) return true;
+
+    const val = field.el.value;
+    const isValid = field.validate(val);
+    const parent = field.el.parentElement;
+    let errEl = parent.querySelector(".f-error-msg");
+
+    if (!isValid) {
+      field.el.classList.add("error");
+      field.el.classList.remove("valid");
+      if (!errEl) {
+        errEl = document.createElement("span");
+        errEl.className = "f-error-msg";
+        parent.appendChild(errEl);
+      }
+      errEl.textContent = field.errorMsg;
+    } else {
+      field.el.classList.remove("error");
+      field.el.classList.add("valid");
+      if (errEl) errEl.remove();
+    }
+    return isValid;
+  }
+
+  // Real-time validation on input & blur events
+  Object.keys(fields).forEach(key => {
+    const inputEl = fields[key].el;
+    if (inputEl) {
+      inputEl.addEventListener("blur", () => validateField(key));
+      inputEl.addEventListener("input", () => {
+        if (inputEl.classList.contains("error")) {
+          validateField(key);
+        }
+      });
+    }
+  });
+
+  // Submit Handler
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    let isFormValid = true;
+    let firstInvalidEl = null;
+
+    Object.keys(fields).forEach(key => {
+      const isValid = validateField(key);
+      if (!isValid) {
+        isFormValid = false;
+        if (!firstInvalidEl) firstInvalidEl = fields[key].el;
+      }
+    });
+
+    if (!isFormValid) {
+      if (firstInvalidEl) firstInvalidEl.focus();
+      return;
+    }
+
+    // Success State
+    const btn = form.querySelector(".f-submit");
+    const origHTML = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent Successfully!';
+    btn.style.background = "linear-gradient(135deg, #10b981, #06b6d4)";
+    btn.disabled = true;
+
+    // Toast Banner
+    let toast = form.querySelector(".f-success-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "f-success-toast";
+      form.appendChild(toast);
+    }
+    toast.innerHTML = '<i class="fa-solid fa-paper-plane" style="margin-right:6px"></i> Thank you! Your message has been sent successfully.';
+
+    setTimeout(() => {
+      btn.innerHTML = origHTML;
+      btn.style.background = "";
+      btn.disabled = false;
+      if (toast) toast.remove();
+      Object.keys(fields).forEach(key => {
+        if (fields[key].el) {
+          fields[key].el.value = "";
+          fields[key].el.classList.remove("valid", "error");
+        }
+      });
+    }, 3800);
+  });
+}
