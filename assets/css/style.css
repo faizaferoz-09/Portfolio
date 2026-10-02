@@ -1,4 +1,4 @@
-/* ==========================================
+﻿/* ==========================================
    PORTFOLIO - Premium Dark Theme
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
@@ -1250,7 +1250,7 @@ section {
 /* ===== FOOTER ===== */
 footer {
   padding: 1.8rem 0;
-  border-top: 1px solid var(--border);
+  border-top: none;
   z-index: 2;
   position: relative
 }
